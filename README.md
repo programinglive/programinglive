@@ -1,6 +1,6 @@
-# programinglive
+# Programinglive
 
-Programmer hoods... Here, we build an army of programmers.
+Programmer Hoods... Here, we build an army of programmers.
 
 ## What is Programinglive?
 
