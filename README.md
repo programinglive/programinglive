@@ -1,5 +1,3 @@
-# Programinglive
-
 Programmer Hoods... Here, we build an army of programmers.
 
 ## What is Programinglive?
