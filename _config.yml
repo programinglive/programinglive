@@ -29,6 +29,7 @@ github_username:  programinglive
 
 # Build settings
 theme: just-the-docs
+
 plugins:
   - jekyll-archives
 
