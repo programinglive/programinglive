@@ -22,7 +22,7 @@ title: Programmer Hoods | Programinglive
 email: creative@programinglive.com
 description: >- # this means to ignore newlines until "baseurl:"
   Programmer Hoods... Here, we build an army of programmers.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://programinglive.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
