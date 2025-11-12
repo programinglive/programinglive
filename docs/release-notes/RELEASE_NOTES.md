@@ -2,10 +2,20 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.0.3 | 2025-11-12 | add contributor guides and templates (b49a073) |
 | 0.0.2 | 2025-11-12 | update release notes for 0.0.1 (a506f11) |
 | 0.0.1 | 2025-11-12 | See CHANGELOG for details. |
 
 
+
+
+## 0.0.3 – 📝 Documentation
+
+Released on **2025-11-12**.
+
+- add contributor guides and templates (b49a073)
+- update release notes for v0.0.2 (c466995)
+- update social share images to use deployed logo (59c5dd7)
 
 ## 0.0.2 – 📝 Documentation
 
