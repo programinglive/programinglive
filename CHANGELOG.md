@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/programinglive/programinglive/compare/v0.0.2...v0.0.3) (2025-11-12)
+
+
+### 📝 Documentation
+
+* add contributor guides and templates ([b49a073](https://github.com/programinglive/programinglive/commit/b49a073e8df603f94046379237fddddbaff74870))
+* update release notes for v0.0.2 ([c466995](https://github.com/programinglive/programinglive/commit/c466995a76d512d33e542b88b9ae8eb901fffc8c))
+
+
+### 🧹 Chores
+
+* update social share images to use deployed logo ([59c5dd7](https://github.com/programinglive/programinglive/commit/59c5dd74c17bb71a60fc3e22e80bb7f2aaeca175))
+
 ### [0.0.2](https://github.com/programinglive/programinglive/compare/v0.0.1...v0.0.2) (2025-11-12)
 
 
