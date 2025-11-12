@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/programinglive/programinglive/compare/v0.0.1...v0.0.2) (2025-11-12)
+
+
+### 📝 Documentation
+
+* update release notes for 0.0.1 ([a506f11](https://github.com/programinglive/programinglive/commit/a506f1125b2b3aa1f307ea0920268c01266baad5))
+
+
+### 💄 Styles
+
+* simplify navbar spacing to mirror tldraw aesthetic ([ca22946](https://github.com/programinglive/programinglive/commit/ca2294674312479e94e3b6821c8e80c6771db924))
+
+
+### ✨ Features
+
+* add legal pages, navbar variant, and social metadata ([bed1cee](https://github.com/programinglive/programinglive/commit/bed1cee51ec8c1c68604f589b0f6ddf93d6bc128))
+* add sponsor logos and refresh section copy ([51cc324](https://github.com/programinglive/programinglive/commit/51cc3246ed7b5a045f42038730cd85becdd12236))
+
 ### 0.0.1 (2025-11-12)
 
 
