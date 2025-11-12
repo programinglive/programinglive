@@ -1,4 +1,6 @@
 import './style.css'
+import { renderNavbar } from './components/navbar'
+import { renderFooter } from './components/footer'
 
 document.documentElement.classList.add('scroll-smooth')
 document.body.classList.add('antialiased', 'bg-slate-50', 'text-slate-900')
@@ -7,32 +9,10 @@ const app = document.querySelector<HTMLDivElement>('#app')
 
 if (app) {
   app.innerHTML = `
-    <main class="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
+    <main id="top" class="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
       <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-6 pb-12 sm:px-10 lg:pb-16">
         <header class="flex flex-col gap-8">
-          <nav class="sticky top-0 z-20 flex flex-wrap items-center justify-between gap-6 border-b border-slate-200 bg-white/95 px-2 py-3 text-sm font-medium text-slate-600 backdrop-blur">
-            <a class="flex items-center gap-3 text-slate-900 hover:text-slate-900" href="#top">
-              <img alt="ProgramingLive logo" class="h-9 w-9 rounded-full border border-slate-200 object-cover" src="/logo_prograiminglive.png" />
-              <span class="text-lg font-semibold tracking-tight">ProgramingLive</span>
-            </a>
-            <div class="flex flex-wrap items-center gap-4 md:gap-6">
-              <a class="inline-flex items-center gap-1 transition hover:text-slate-900" href="#vision">
-                Vision
-              </a>
-              <a class="inline-flex items-center gap-1 transition hover:text-slate-900" href="#mission">
-                Mission
-              </a>
-              <a class="inline-flex items-center gap-1 transition hover:text-slate-900" href="#programs">
-                Programs
-              </a>
-              <a class="inline-flex items-center gap-1 transition hover:text-slate-900" href="#sponsor">
-                Sponsors
-              </a>
-              <a class="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-2 font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900" href="#join-us">
-                Join Us
-              </a>
-            </div>
-          </nav>
+          ${renderNavbar()}
 
           <section class="grid gap-10 pt-4 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div class="space-y-6">
@@ -46,21 +26,30 @@ if (app) {
             </div>
             <div class="relative flex items-center justify-center">
               <div class="relative w-full max-w-md rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm">
-                <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Why builders choose us</p>
-                <div class="mt-4 grid gap-4 text-sm text-slate-700">
-                  <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4">
-                    <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Guided Learning</p>
-                    <p class="mt-2 text-slate-600">Structured study paths help newcomers stay focused and finish their first real-world projects.</p>
-                  </div>
-                  <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4">
-                    <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Community Support</p>
-                    <p class="mt-2 text-slate-600">Weekly circles pair learners with mentors and peers for reviews, feedback, and accountability.</p>
-                  </div>
-                  <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4">
-                    <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Project Showcases</p>
-                    <p class="mt-2 text-slate-600">Members demo community builds, receive peer reviews, and iterate with practical feedback.</p>
-                  </div>
-                </div>
+                <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Start your ProgramingLive journey</p>
+                <ol class="mt-5 space-y-4 text-sm text-slate-700">
+                  <li class="flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                    <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">1</span>
+                    <div>
+                      <h3 class="text-base font-semibold text-slate-900">Pick your pathway</h3>
+                      <p class="mt-1 text-slate-600">Review our <a class="text-slate-900 underline" href="#programs">signature programs</a> to find the track that fits your goals—Belajar, Indonesia Emas 2045, Open Projects, or Creator Studio.</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                    <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">2</span>
+                    <div>
+                      <h3 class="text-base font-semibold text-slate-900">Join a build sprint</h3>
+                      <p class="mt-1 text-slate-600">Head to the <a class="text-slate-900 underline" href="#join-us">Community Wins</a> board, pick an upcoming sprint, and commit to shipping alongside fellow builders.</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                    <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">3</span>
+                    <div>
+                      <h3 class="text-base font-semibold text-slate-900">Share outcomes</h3>
+                      <p class="mt-1 text-slate-600">Document what you build, connect with <a class="text-slate-900 underline" href="#sponsor">sponsors</a>, and open doors for collaboration or support.</p>
+                    </div>
+                  </li>
+                </ol>
               </div>
             </div>
           </section>
@@ -175,14 +164,7 @@ if (app) {
           </div>
         </section>
 
-        <footer class="flex flex-col gap-6 border-t border-slate-200 py-10 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; ${new Date().getFullYear()} ProgramingLive. Crafted with purpose in Indonesia.</p>
-          <div class="flex flex-wrap gap-4">
-            <a class="transition hover:text-slate-900" href="#">Privacy</a>
-            <a class="transition hover:text-slate-900" href="#">Community Guidelines</a>
-            <a class="transition hover:text-slate-900" href="#">Contact</a>
-          </div>
-        </footer>
+        ${renderFooter()}
       </div>
     </main>
   `
