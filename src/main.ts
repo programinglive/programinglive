@@ -8,26 +8,33 @@ const app = document.querySelector<HTMLDivElement>('#app')
 if (app) {
   app.innerHTML = `
     <main class="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
-      <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-16 px-6 pt-6 pb-12 sm:px-10 sm:pt-8 lg:pb-16">
-        <header class="flex flex-col gap-12">
-          <nav class="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white/80 px-5 py-4 shadow-sm shadow-slate-200/40 backdrop-blur">
-            <div class="flex items-center gap-3">
-              <img alt="ProgramingLive logo" class="h-10 w-10 rounded-full border border-slate-200 object-cover" src="/logo_prograiminglive.png" />
-              <div class="space-y-0.5">
-                <p class="text-lg font-semibold tracking-tight text-slate-900">ProgramingLive</p>
-                <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Elevating Indonesian software talent</p>
-              </div>
-            </div>
-            <div class="flex flex-wrap items-center gap-2 text-sm font-medium text-slate-500">
-              <a class="rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900" href="#vision">Vision</a>
-              <a class="rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900" href="#mission">Mission</a>
-              <a class="rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900" href="#programs">Programs</a>
-              <a class="rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900" href="#sponsor">Sponsor</a>
-              <a class="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-1.5 text-white transition hover:bg-slate-800" href="#join-us">Join Us</a>
+      <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-6 pb-12 sm:px-10 lg:pb-16">
+        <header class="flex flex-col gap-8">
+          <nav class="sticky top-0 z-20 flex flex-wrap items-center justify-between gap-6 border-b border-slate-200 bg-white/95 px-2 py-3 text-sm font-medium text-slate-600 backdrop-blur">
+            <a class="flex items-center gap-3 text-slate-900 hover:text-slate-900" href="#top">
+              <img alt="ProgramingLive logo" class="h-9 w-9 rounded-full border border-slate-200 object-cover" src="/logo_prograiminglive.png" />
+              <span class="text-lg font-semibold tracking-tight">ProgramingLive</span>
+            </a>
+            <div class="flex flex-wrap items-center gap-4 md:gap-6">
+              <a class="inline-flex items-center gap-1 transition hover:text-slate-900" href="#vision">
+                Vision
+              </a>
+              <a class="inline-flex items-center gap-1 transition hover:text-slate-900" href="#mission">
+                Mission
+              </a>
+              <a class="inline-flex items-center gap-1 transition hover:text-slate-900" href="#programs">
+                Programs
+              </a>
+              <a class="inline-flex items-center gap-1 transition hover:text-slate-900" href="#sponsor">
+                Sponsors
+              </a>
+              <a class="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-2 font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900" href="#join-us">
+                Join Us
+              </a>
             </div>
           </nav>
 
-          <section class="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+          <section class="grid gap-10 pt-4 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div class="space-y-6">
               <p class="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-sm text-slate-600">A vibrant community of builders</p>
               <h1 class="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">Clear pathways for Indonesia's next generation of developers.</h1>
