@@ -1,0 +1,78 @@
+{
+  "name": "my-vibe-site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "echo \"No tests specified\"",
+    "prepare": "husky",
+    "release": "node scripts/release.js",
+    "release:major": "node scripts/release.js major",
+    "release:minor": "node scripts/release.js minor",
+    "release:patch": "node scripts/release.js patch"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@programinglive/commiter": "^1.1.7",
+    "autoprefixer": "^10.4.20",
+    "husky": "^9.1.7",
+    "postcss": "^8.4.49",
+    "standard-version": "^9.5.0",
+    "tailwindcss": "^3.4.14",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.2"
+  },
+  "standard-version": {
+    "releaseCommitMessageFormat": "chore(release): {{currentTag}} 🚀",
+    "types": [
+      {
+        "type": "feat",
+        "section": "✨ Features"
+      },
+      {
+        "type": "fix",
+        "section": "🐛 Bug Fixes"
+      },
+      {
+        "type": "perf",
+        "section": "⚡ Performance"
+      },
+      {
+        "type": "refactor",
+        "section": "♻️ Refactors"
+      },
+      {
+        "type": "docs",
+        "section": "📝 Documentation"
+      },
+      {
+        "type": "style",
+        "section": "💄 Styles"
+      },
+      {
+        "type": "test",
+        "section": "✅ Tests"
+      },
+      {
+        "type": "build",
+        "section": "🏗️ Build System"
+      },
+      {
+        "type": "ci",
+        "section": "👷 Continuous Integration"
+      },
+      {
+        "type": "chore",
+        "section": "🧹 Chores"
+      },
+      {
+        "type": "revert",
+        "section": "⏪ Reverts"
+      }
+    ]
+  }
+}
