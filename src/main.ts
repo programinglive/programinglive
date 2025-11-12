@@ -8,9 +8,9 @@ const app = document.querySelector<HTMLDivElement>('#app')
 if (app) {
   app.innerHTML = `
     <main class="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
-      <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-20 px-6 py-12 sm:px-10 lg:py-20">
+      <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-16 px-6 pt-6 pb-12 sm:px-10 sm:pt-8 lg:pb-16">
         <header class="flex flex-col gap-12">
-          <nav class="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white/90 px-5 py-4 shadow-sm shadow-slate-200/40">
+          <nav class="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white/80 px-5 py-4 shadow-sm shadow-slate-200/40 backdrop-blur">
             <div class="flex items-center gap-3">
               <img alt="ProgramingLive logo" class="h-10 w-10 rounded-full border border-slate-200 object-cover" src="/logo_prograiminglive.png" />
               <div class="space-y-0.5">
@@ -50,8 +50,8 @@ if (app) {
                     <p class="mt-2 text-slate-600">Weekly circles pair learners with mentors and peers for reviews, feedback, and accountability.</p>
                   </div>
                   <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4">
-                    <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Tangible Outcomes</p>
-                    <p class="mt-2 text-slate-600">Members graduate with shipped products, polished portfolios, and introductions to hiring partners.</p>
+                    <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Project Showcases</p>
+                    <p class="mt-2 text-slate-600">Members demo community builds, receive peer reviews, and iterate with practical feedback.</p>
                   </div>
                 </div>
               </div>
@@ -60,14 +60,11 @@ if (app) {
         </header>
 
         <section class="grid gap-6 lg:grid-cols-3">
-          <article id="vision" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/10 text-slate-900">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-            </span>
-            <h2 class="text-lg font-semibold text-slate-900">Our Vision</h2>
+          <article id="vision" class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-slate-900">Our Vision</h2>
+              <span class="h-2 w-10 rounded-full bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 opacity-80 transition group-hover:opacity-100"></span>
+            </div>
             <p class="mt-3 text-sm text-slate-600">Empowering Indonesia's demographic advantage by nurturing world-class programmers who elevate the country's global influence.</p>
             <ul class="mt-4 space-y-3 text-sm text-slate-700">
               <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-900"></span>Champion inclusive access to technology education.</li>
@@ -75,16 +72,11 @@ if (app) {
               <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-900"></span>Position Indonesia as a strategic global tech player.</li>
             </ul>
           </article>
-          <article id="mission" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/10 text-slate-900">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 5h16"></path>
-                <path d="M4 12h10"></path>
-                <path d="M4 19h7"></path>
-                <circle cx="18" cy="12" r="3"></circle>
-              </svg>
-            </span>
-            <h2 class="text-lg font-semibold text-slate-900">Our Mission</h2>
+          <article id="mission" class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-slate-900">Our Mission</h2>
+              <span class="h-2 w-10 rounded-full bg-gradient-to-r from-indigo-900 via-indigo-700 to-indigo-500 opacity-80 transition group-hover:opacity-100"></span>
+            </div>
             <p class="mt-3 text-sm text-slate-600">We turn inspiration into action through thoughtful content, immersive programs, and meaningful collaboration.</p>
             <div class="mt-4 space-y-3 text-sm text-slate-700">
               <p class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-700"></span>Curate trusted knowledge into accessible tutorials and guides.</p>
@@ -92,15 +84,11 @@ if (app) {
               <p class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-700"></span>Build open-source projects and learning tracks for hands-on growth.</p>
             </div>
           </article>
-          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/10 text-slate-900">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"></path>
-                <path d="M6.8 20c.74-2.39 3-4 5.2-4s4.47 1.61 5.2 4"></path>
-                <path d="M18 11v2m1-1h-2"></path>
-              </svg>
-            </span>
-            <h2 class="text-lg font-semibold text-slate-900">For Our Community</h2>
+          <article class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-slate-900">For Our Community</h2>
+              <span class="h-2 w-10 rounded-full bg-gradient-to-r from-slate-900 via-slate-600 to-slate-400 opacity-80 transition group-hover:opacity-100"></span>
+            </div>
             <p class="mt-3 text-sm text-slate-600">Whether you're a beginner or a business innovator, ProgramingLive provides clarity and momentum.</p>
             <ul class="mt-4 space-y-3 text-sm text-slate-700">
               <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-500"></span>Guided learning journeys for new developers.</li>
@@ -147,23 +135,36 @@ if (app) {
           </div>
         </section>
 
-        <section id="sponsor" class="grid gap-6 rounded-3xl border border-slate-200 bg-white p-8 text-sm text-slate-600 shadow-sm lg:grid-cols-[1fr_1.2fr]">
+        <section id="sponsor" class="grid gap-6 rounded-3xl border border-slate-200 bg-white p-8 text-sm text-slate-600 shadow-sm">
           <div>
-            <h2 class="text-lg font-semibold text-slate-900">Sponsors & Partners</h2>
-            <p class="mt-3">We collaborate with organizations that invest in sustainable innovation and talent development.</p>
-            <div class="mt-6 grid grid-cols-2 gap-4 text-slate-900 sm:w-64">
-              <div class="rounded-2xl border border-slate-200 bg-slate-50 py-4 text-center font-semibold">JetBrains</div>
-              <div class="rounded-2xl border border-slate-200 bg-slate-50 py-4 text-center font-semibold">Sentry</div>
+            <h2 class="text-lg font-semibold text-slate-900">Sponsors</h2>
+            <p class="mt-3 text-slate-600">These teams fuel ProgramingLive with tooling, hosting, and community support so builders can stay focused on shipping.</p>
+            <div class="mt-6 grid grid-cols-2 gap-8 justify-items-center sm:grid-cols-4 sm:gap-10">
+              <img
+                src="/jetbrains.svg"
+                alt="JetBrains logo"
+                class="h-12 w-auto"
+                loading="lazy"
+              />
+              <img
+                src="/sentry.svg"
+                alt="Sentry logo"
+                class="h-12 w-auto"
+                loading="lazy"
+              />
+              <img
+                src="/algolia.svg"
+                alt="Algolia logo"
+                class="h-12 w-auto"
+                loading="lazy"
+              />
+              <img
+                src="/tldraw.svg"
+                alt="tldraw logo"
+                class="h-12 w-auto"
+                loading="lazy"
+              />
             </div>
-          </div>
-          <div class="space-y-4">
-            <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">How we partner</h3>
-            <ul class="space-y-3 text-slate-700">
-              <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-900"></span>Project-based collaborations delivering real value for communities.</li>
-              <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-900"></span>Workshops, scholarships, and tooling support for emerging talent.</li>
-              <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-900"></span>Co-created research highlighting Indonesia's digital potential.</li>
-            </ul>
-            <button class="mt-6 w-full rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300">Partner with us</button>
           </div>
         </section>
 
