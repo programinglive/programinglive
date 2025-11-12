@@ -4,7 +4,7 @@ const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const { updateReleaseNotes } = require('./update-release-notes');
+const { updateReleaseNotes } = require('./update-release-notes.cjs');
 
 const fsFokPreloadPath = path.join(__dirname, 'preload', 'fs-f-ok.cjs');
 const FS_FOK_PRELOAD_FLAG = buildPreloadFlag(fsFokPreloadPath);
