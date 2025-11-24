@@ -2,12 +2,22 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.0.4 | 2025-11-24 | add release notes for v0.0.3 (4b66401) |
 | 0.0.3 | 2025-11-12 | add contributor guides and templates (b49a073) |
 | 0.0.2 | 2025-11-12 | update release notes for 0.0.1 (a506f11) |
 | 0.0.1 | 2025-11-12 | See CHANGELOG for details. |
 
 
 
+
+
+## 0.0.4 – 📝 Documentation
+
+Released on **2025-11-24**.
+
+- add release notes for v0.0.3 (4b66401)
+- **build:** use cjs release scripts (8af1621)
+- setup commiter and clean template files (d6c9be7)
 
 ## 0.0.3 – 📝 Documentation
 
