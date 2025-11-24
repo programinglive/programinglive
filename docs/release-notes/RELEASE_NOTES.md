@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.0.6 | 2025-11-24 | **ui:** refine hero layout and navbar (a9ed1cb) |
 | 0.0.5 | 2025-11-24 | **release-notes:** update release notes for v0.0.4 (90bf5c8) |
 | 0.0.4 | 2025-11-24 | add release notes for v0.0.3 (4b66401) |
 | 0.0.3 | 2025-11-12 | add contributor guides and templates (b49a073) |
@@ -12,6 +13,13 @@
 
 
 
+
+
+## 0.0.6 – ✨ Features
+
+Released on **2025-11-24**.
+
+- **ui:** refine hero layout and navbar (a9ed1cb)
 
 ## 0.0.5 – 📝 Documentation
 
