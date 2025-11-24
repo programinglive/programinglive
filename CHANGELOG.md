@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/programinglive/programinglive/compare/v0.0.5...v0.0.6) (2025-11-24)
+
+
+### ✨ Features
+
+* **ui:** refine hero layout and navbar ([a9ed1cb](https://github.com/programinglive/programinglive/commit/a9ed1cb5bcffcdf3a0f1b985a2ca9801b1af8453))
+
 ### [0.0.5](https://github.com/programinglive/programinglive/compare/v0.0.4...v0.0.5) (2025-11-24)
 
 
