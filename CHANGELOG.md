@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/programinglive/programinglive/compare/v0.0.4...v0.0.5) (2025-11-24)
+
+
+### 📝 Documentation
+
+* **release-notes:** update release notes for v0.0.4 ([90bf5c8](https://github.com/programinglive/programinglive/commit/90bf5c836910f78cdfcd294b65e03167f5fcfe62))
+
+
+### ✨ Features
+
+* **nav:** improve mobile navbar layout ([71459f2](https://github.com/programinglive/programinglive/commit/71459f2ea8f83a616d39469be44462a3b06aef83))
+
+
+### 🧹 Chores
+
+* **tools:** add windsurf workspace rules ([ee46daf](https://github.com/programinglive/programinglive/commit/ee46dafc00a124dddbf9445cb946448d982c8de5))
+
 ### [0.0.4](https://github.com/programinglive/programinglive/compare/v0.0.3...v0.0.4) (2025-11-24)
 
 
