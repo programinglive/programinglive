@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.0.5 | 2025-11-24 | **release-notes:** update release notes for v0.0.4 (90bf5c8) |
 | 0.0.4 | 2025-11-24 | add release notes for v0.0.3 (4b66401) |
 | 0.0.3 | 2025-11-12 | add contributor guides and templates (b49a073) |
 | 0.0.2 | 2025-11-12 | update release notes for 0.0.1 (a506f11) |
@@ -10,6 +11,15 @@
 
 
 
+
+
+## 0.0.5 – 📝 Documentation
+
+Released on **2025-11-24**.
+
+- **release-notes:** update release notes for v0.0.4 (90bf5c8)
+- **nav:** improve mobile navbar layout (71459f2)
+- **tools:** add windsurf workspace rules (ee46daf)
 
 ## 0.0.4 – 📝 Documentation
 

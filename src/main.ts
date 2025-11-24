@@ -11,44 +11,17 @@ if (app) {
   app.innerHTML = `
     <main id="top" class="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
       ${renderNavbar()}
-      <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-6 pb-12 sm:px-10 lg:pb-16">
-        <header class="flex flex-col gap-8">
-          <section class="grid gap-10 pt-4 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-            <div class="space-y-6">
-              <p class="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-sm text-slate-600">A vibrant community of builders</p>
+      <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-16 px-6 pb-12 sm:px-10 lg:pb-16">
+        <header class="flex flex-col">
+          <section class="relative grid gap-10 pt-10 lg:items-center">
+            <div class="pointer-events-none absolute inset-y-10 right-[-6rem] hidden w-[28rem] rounded-full bg-gradient-to-b from-slate-100 via-slate-50 to-transparent blur-3xl lg:block"></div>
+            <div class="space-y-5 relative z-10">
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-500">A vibrant community of builders</p>
               <h1 class="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">Clear pathways for Indonesia's next generation of developers.</h1>
               <p class="text-lg text-slate-600">We craft open-source experiences, tutorials, and programs that help aspiring programmers grow into confident creators ready to shape the nation's digital future.</p>
               <div class="flex flex-col gap-4 sm:flex-row">
                 <button class="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Explore Programs</button>
                 <button class="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300">See Community Stories</button>
-              </div>
-            </div>
-            <div class="relative flex items-center justify-center">
-              <div class="relative w-full max-w-md rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm">
-                <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Start your ProgramingLive journey</p>
-                <ol class="mt-5 space-y-4 text-sm text-slate-700">
-                  <li class="flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4">
-                    <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">1</span>
-                    <div>
-                      <h3 class="text-base font-semibold text-slate-900">Pick your pathway</h3>
-                      <p class="mt-1 text-slate-600">Review our <a class="text-slate-900 underline" href="#programs">signature programs</a> to find the track that fits your goals—Belajar, Indonesia Emas 2045, Open Projects, or Creator Studio.</p>
-                    </div>
-                  </li>
-                  <li class="flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4">
-                    <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">2</span>
-                    <div>
-                      <h3 class="text-base font-semibold text-slate-900">Join a build sprint</h3>
-                      <p class="mt-1 text-slate-600">Head to the <a class="text-slate-900 underline" href="#join-us">Community Wins</a> board, pick an upcoming sprint, and commit to shipping alongside fellow builders.</p>
-                    </div>
-                  </li>
-                  <li class="flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4">
-                    <span class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">3</span>
-                    <div>
-                      <h3 class="text-base font-semibold text-slate-900">Share outcomes</h3>
-                      <p class="mt-1 text-slate-600">Document what you build, connect with <a class="text-slate-900 underline" href="#sponsor">sponsors</a>, and open doors for collaboration or support.</p>
-                    </div>
-                  </li>
-                </ol>
               </div>
             </div>
           </section>

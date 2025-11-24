@@ -74,5 +74,8 @@
         "section": "⏪ Reverts"
       }
     ]
+  },
+  "dependencies": {
+    "netlify-cli": "^23.11.1"
   }
 }
