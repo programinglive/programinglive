@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/programinglive/programinglive/compare/v0.0.3...v0.0.4) (2025-11-24)
+
+
+### 📝 Documentation
+
+* add release notes for v0.0.3 ([4b66401](https://github.com/programinglive/programinglive/commit/4b66401ecab0e8cc15824fbc2efd3f5181a3d173))
+
+
+### 🧹 Chores
+
+* **build:** use cjs release scripts ([8af1621](https://github.com/programinglive/programinglive/commit/8af16213b149767449a249e5b7016d01216d791c))
+* setup commiter and clean template files ([d6c9be7](https://github.com/programinglive/programinglive/commit/d6c9be7cea60734907e58b6c2f3c361fb6f47881))
+
 ### [0.0.3](https://github.com/programinglive/programinglive/compare/v0.0.2...v0.0.3) (2025-11-12)
 
 
