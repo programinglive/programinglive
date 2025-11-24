@@ -10,10 +10,9 @@ const app = document.querySelector<HTMLDivElement>('#app')
 if (app) {
   app.innerHTML = `
     <main id="top" class="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
+      ${renderNavbar()}
       <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-6 pb-12 sm:px-10 lg:pb-16">
         <header class="flex flex-col gap-8">
-          ${renderNavbar()}
-
           <section class="grid gap-10 pt-4 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div class="space-y-6">
               <p class="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-sm text-slate-600">A vibrant community of builders</p>
@@ -168,4 +167,15 @@ if (app) {
       </div>
     </main>
   `
+
+  const navToggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]')
+  const navMenu = document.querySelector<HTMLElement>('[data-nav-menu]')
+
+  if (navToggle && navMenu) {
+    navMenu.classList.add('hidden')
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden')
+    })
+  }
 }
