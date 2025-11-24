@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/programinglive/programinglive/compare/v0.0.6...v0.1.0) (2025-11-24)
+
+
+### 📝 Documentation
+
+* **release-notes:** update release notes for v0.0.6 ([eda12db](https://github.com/programinglive/programinglive/commit/eda12db22dced496479e56d969ec0f3a17aeed18))
+
+
+### ✨ Features
+
+* migrate landing to Next.js app router ([17d0ad3](https://github.com/programinglive/programinglive/commit/17d0ad3187f459677cbf2648819b56d396f21ece))
+
 ### [0.0.6](https://github.com/programinglive/programinglive/compare/v0.0.5...v0.0.6) (2025-11-24)
 
 
