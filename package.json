@@ -9,10 +9,10 @@
     "start": "next start",
     "test": "echo \"No tests specified\"",
     "prepare": "husky",
-    "release": "node scripts/release.cjs",
-    "release:major": "node scripts/release.cjs major",
-    "release:minor": "node scripts/release.cjs minor",
-    "release:patch": "node scripts/release.cjs patch"
+    "release": "node scripts/release.js",
+    "release:major": "node scripts/release.js major",
+    "release:minor": "node scripts/release.js minor",
+    "release:patch": "node scripts/release.js patch"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
