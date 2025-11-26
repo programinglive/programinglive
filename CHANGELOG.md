@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/programinglive/programinglive/compare/v0.1.0...v0.1.1) (2025-11-26)
+
+
+### ✨ Features
+
+* add open source projects page with dev workflow and commiter ([9c83436](https://github.com/programinglive/programinglive/commit/9c83436cca6083b09f051090b96d1d01f63f2575))
+
 ## [0.1.0](https://github.com/programinglive/programinglive/compare/v0.0.6...v0.1.0) (2025-11-24)
 
 
