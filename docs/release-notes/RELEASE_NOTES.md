@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.1.2 | 2025-11-26 | **open-source:** add commiter website link to projects page (4730b35) |
 | 0.1.1 | 2025-11-26 | add open source projects page with dev workflow and commiter (9c83436) |
 | 0.0.6 | 2025-11-24 | **ui:** refine hero layout and navbar (a9ed1cb) |
 | 0.0.5 | 2025-11-24 | **release-notes:** update release notes for v0.0.4 (90bf5c8) |
@@ -16,6 +17,13 @@
 
 
 
+
+
+## 0.1.2 – ✨ Features
+
+Released on **2025-11-26**.
+
+- **open-source:** add commiter website link to projects page (4730b35)
 
 ## 0.1.1 – ✨ Features
 
