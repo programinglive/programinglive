@@ -32,6 +32,7 @@ const projects = [
       'Provides release helpers for npm publishing and GitHub Actions plus a dry-run workflow for safe testing.',
     ],
     links: [
+      { label: 'View Website', href: 'https://commiter.programinglive.com/' },
       { label: 'GitHub Repo', href: 'https://github.com/programinglive/commiter' },
       { label: 'View on npm', href: 'https://www.npmjs.com/package/@programinglive/commiter' },
     ],
