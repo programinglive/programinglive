@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/programinglive/programinglive/compare/v0.1.2...v0.1.3) (2025-11-27)
+
+
+### 📝 Documentation
+
+* **release-notes:** add entry for v0.1.2 ([379ff1e](https://github.com/programinglive/programinglive/commit/379ff1edb6bb9019462d2cf3bef19a28e10f71f1))
+
+
+### ✨ Features
+
+* update program tracks and fix fast refresh warning ([a67eaea](https://github.com/programinglive/programinglive/commit/a67eaeab1541b5401f106e075a4f054a5ced091a))
+
 ### [0.1.2](https://github.com/programinglive/programinglive/compare/v0.1.1...v0.1.2) (2025-11-26)
 
 
