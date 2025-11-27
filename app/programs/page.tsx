@@ -29,95 +29,43 @@ export default function ProgramsPage() {
           </div>
         </section>
 
-        <section className="grid gap-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-[1.3fr_1fr]">
+        <section className="grid gap-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <div className="space-y-4">
             <h2 className="text-xl font-semibold text-slate-900">Program tracks</h2>
             <p className="text-sm text-slate-600">
-              Choose the track that matches where you are nowand where you want to go next.
+              Choose the track that matches where you are now and where you want to go next.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <Link
+                href="https://belajar.programinglive.com"
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-slate-300 hover:bg-slate-100"
+              >
                 <p className="text-xs uppercase tracking-widest text-slate-500">Belajar Program</p>
                 <p className="mt-2 text-sm text-slate-700">
                   A guided curriculum that blends foundational concepts with practical labs and community check-ins.
                 </p>
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              </Link>
+              <Link
+                href="https://programinglive.my.id"
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-slate-300 hover:bg-slate-100"
+              >
                 <p className="text-xs uppercase tracking-widest text-slate-500">Indonesia Emas 2045</p>
                 <p className="mt-2 text-sm text-slate-700">
                   A nationwide initiative preparing talent for the country&apos;s golden digital era with mission-driven
                   projects.
                 </p>
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs uppercase tracking-widest text-slate-500">Open Projects</p>
+              </Link>
+              <Link
+                href="https://programinglive.com/open-source"
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-slate-300 hover:bg-slate-100"
+              >
+                <p className="text-xs uppercase tracking-widest text-slate-500">Open Source Project</p>
                 <p className="mt-2 text-sm text-slate-700">
                   Collaborative builds tackling real business and societal challenges with maintainers and mentors.
                 </p>
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs uppercase tracking-widest text-slate-500">Creator Studio</p>
-                <p className="mt-2 text-sm text-slate-700">
-                  From articles to videos, we turn insights into accessible inspiration and public learning resources.
-                </p>
-              </div>
+              </Link>
             </div>
           </div>
-          <aside className="flex flex-col justify-between gap-6 rounded-2xl border border-slate-200 bg-slate-900/5 p-6 text-sm text-slate-700">
-            <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.4em] text-slate-500">How it works</p>
-              <ol className="space-y-3 text-slate-700">
-                <li className="flex gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">
-                    1
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">Pick a track</p>
-                    <p className="text-xs text-slate-600">
-                      Start from Belajar if you&apos;re early, or jump into Open Projects and Creator Studio when you&apos;re
-                      ready to ship.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">
-                    2
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">Join a sprint</p>
-                    <p className="text-xs text-slate-600">
-                      Work in short, focused cycles with other builders and mentors so you never ship alone.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">
-                    3
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">Ship and share</p>
-                    <p className="text-xs text-slate-600">
-                      Document what you build, add it to your public portfolio, and share it with partners and the
-                      community.
-                    </p>
-                  </div>
-                </li>
-              </ol>
-            </div>
-
-            <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.4em] text-slate-500">Ready to start?</p>
-              <Link
-                href="mailto:creative@programinglive.com?subject=Join%20ProgramingLive%20Programs"
-                className="flex w-full items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-              >
-                Talk to the team
-              </Link>
-              <p className="text-xs text-slate-500">
-                Tell us a bit about your background and which program track you&apos;re interested in.
-              </p>
-            </div>
-          </aside>
         </section>
 
         <Footer />

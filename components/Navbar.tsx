@@ -2,10 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-
-function classNames(...values: Array<string | false | null | undefined>) {
-  return values.filter(Boolean).join(' ')
-}
+import { classNames } from '../lib/utils'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
