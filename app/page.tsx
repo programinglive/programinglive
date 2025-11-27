@@ -11,7 +11,7 @@ export default function HomePage() {
           <section className="relative grid gap-10 pt-10 lg:items-center">
             <div className="pointer-events-none absolute inset-y-10 right-[-6rem] hidden w-[28rem] rounded-full bg-gradient-to-b from-slate-100 via-slate-50 to-transparent blur-3xl lg:block" />
             <div className="space-y-5 relative z-10">
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">A vibrant community of builders</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Community Programmers in Indonesia</p>
               <h1 className="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
                 Clear pathways for Indonesia&apos;s next generation of developers.
               </h1>

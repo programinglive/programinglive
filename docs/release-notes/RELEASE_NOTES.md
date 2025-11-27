@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.1.3 | 2025-11-27 | **release-notes:** add entry for v0.1.2 (379ff1e) |
 | 0.1.2 | 2025-11-26 | **open-source:** add commiter website link to projects page (4730b35) |
 | 0.1.1 | 2025-11-26 | add open source projects page with dev workflow and commiter (9c83436) |
 | 0.0.6 | 2025-11-24 | **ui:** refine hero layout and navbar (a9ed1cb) |
@@ -18,6 +19,14 @@
 
 
 
+
+
+## 0.1.3 – 📝 Documentation
+
+Released on **2025-11-27**.
+
+- **release-notes:** add entry for v0.1.2 (379ff1e)
+- update program tracks and fix fast refresh warning (a67eaea)
 
 ## 0.1.2 – ✨ Features
 

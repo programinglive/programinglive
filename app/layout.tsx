@@ -4,7 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: "ProgramingLive — Clear pathways for Indonesia's builders",
   description:
-    "ProgramingLive empowers Indonesian developers with structured programs, collaborative sprints, and community support to ship meaningful products.",
+    "ProgramingLive is a vibrant community of programmers in Indonesia, empowering developers with structured programs, collaborative sprints, and support to ship meaningful products.",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
