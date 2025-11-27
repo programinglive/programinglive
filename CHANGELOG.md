@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/programinglive/programinglive/compare/v0.1.3...v0.1.4) (2025-11-27)
+
+
+### ✨ Features
+
+* update hero text and meta description to emphasize Indonesian programmer community ([9b269ef](https://github.com/programinglive/programinglive/commit/9b269efa356fa79a91a07edc3c912073b1b9867b))
+
 ### [0.1.3](https://github.com/programinglive/programinglive/compare/v0.1.2...v0.1.3) (2025-11-27)
 
 
