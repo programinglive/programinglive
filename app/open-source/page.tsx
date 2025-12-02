@@ -16,7 +16,7 @@ const projects = [
       'Includes hosted docs plus a GitHub repo, making self-hosting as simple as running `node index.js`.',
     ],
     links: [
-      { label: 'View Dashboard', href: 'https://devworkflow.programinglive.com/' },
+      { label: 'View Website', href: 'https://devworkflow.programinglive.com/' },
       { label: 'GitHub Repo', href: 'https://github.com/programinglive/dev-workflow-mcp-server' },
       { label: 'View on npm', href: 'https://www.npmjs.com/package/@programinglive/dev-workflow-mcp-server' },
     ],

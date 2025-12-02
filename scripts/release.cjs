@@ -188,9 +188,41 @@ function runRelease({
     }
   }
 
+  let websiteVersionUpdated = false;
+  let websiteTimelineUpdated = false;
+
+  // Update website version
+  try {
+    console.log('🌐 Updating website version...');
+    const updateWebResult = spawnSync(process.execPath, ['scripts/update-web-version.js'], { stdio: 'inherit', cwd });
+    if (updateWebResult.status === 0) {
+      websiteVersionUpdated = true;
+    } else {
+      console.warn('⚠️  Failed to update website version');
+    }
+  } catch (error) {
+    console.warn(`⚠️  Skipping website version update: ${error.message}`);
+  }
+
+  // Update website releases timeline
+  try {
+    console.log('🌐 Updating website releases timeline...');
+    const updateTimelineResult = spawnSync(process.execPath, ['scripts/update-web-releases.js'], { stdio: 'inherit', cwd });
+    if (updateTimelineResult.status === 0) {
+      websiteTimelineUpdated = true;
+    } else {
+      console.warn('⚠️  Failed to update website releases timeline');
+    }
+  } catch (error) {
+    console.warn(`⚠️  Skipping website releases timeline update: ${error.message}`);
+  }
+
+  if (websiteVersionUpdated || websiteTimelineUpdated) {
+    spawnSync('git', ['add', 'web/index.html'], { stdio: 'inherit', cwd });
+  }
+
   return releaseResult;
 }
-
 if (require.main === module) {
   try {
     const result = runRelease();
@@ -250,4 +282,3 @@ function isWorkingTreeClean({ cwd = process.cwd() } = {}) {
   const output = typeof result.stdout === 'string' ? result.stdout : '';
   return output.trim().length === 0;
 }
-

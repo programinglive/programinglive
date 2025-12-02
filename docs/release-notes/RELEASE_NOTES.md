@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.1.4 | 2025-11-27 | update hero text and meta description to emphasize Indonesian programmer community (9b269ef) |
 | 0.1.3 | 2025-11-27 | **release-notes:** add entry for v0.1.2 (379ff1e) |
 | 0.1.2 | 2025-11-26 | **open-source:** add commiter website link to projects page (4730b35) |
 | 0.1.1 | 2025-11-26 | add open source projects page with dev workflow and commiter (9c83436) |
@@ -20,6 +21,13 @@
 
 
 
+
+
+## 0.1.4 – ✨ Features
+
+Released on **2025-11-27**.
+
+- update hero text and meta description to emphasize Indonesian programmer community (9b269ef)
 
 ## 0.1.3 – 📝 Documentation
 
