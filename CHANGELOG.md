@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/programinglive/programinglive/compare/v0.1.4...v0.1.5) (2025-12-02)
+
+
+### 🧹 Chores
+
+* prepare release ([ef04063](https://github.com/programinglive/programinglive/commit/ef04063dd48c34acf2c1df4611c63674505da3cd))
+
 ### [0.1.4](https://github.com/programinglive/programinglive/compare/v0.1.3...v0.1.4) (2025-11-27)
 
 
