@@ -80,7 +80,18 @@
   },
   "overrides": {
     "glob": "^10.5.0",
-    "jws": "^3.2.3"
+    "jws": "^3.2.3",
+    "@rollup/rollup-android-arm-eabi": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-android-arm64": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-darwin-arm64": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-darwin-x64": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-linux-arm-gnueabihf": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-linux-arm64-gnu": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-linux-arm64-musl": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-linux-riscv64-gnu": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-linux-s390x-gnu": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-linux-x64-gnu": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-linux-x64-musl": "npm:@rollup/rollup-win32-x64-msvc"
   },
   "dependencies": {
     "netlify-cli": "^23.13.0",

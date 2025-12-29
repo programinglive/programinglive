@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.1.6 | 2025-12-29 | clean up release notes formatting and update netlify-cli to 23.12.2 (306b6dd) |
 | 0.1.5 | 2025-12-02 | prepare release (ef04063) |
 | 0.1.4 | 2025-11-27 | update hero text and meta description to emphasize Indonesian programmer community (9b269ef) |
 | 0.1.3 | 2025-11-27 | **release-notes:** add entry for v0.1.2 (379ff1e) |
@@ -13,6 +14,18 @@
 | 0.0.3 | 2025-11-12 | add contributor guides and templates (b49a073) |
 | 0.0.2 | 2025-11-12 | update release notes for 0.0.1 (a506f11) |
 | 0.0.1 | 2025-11-12 | See CHANGELOG for details. |
+
+
+## 0.1.6 – 🧹 Chores
+
+Released on **2025-12-29**.
+
+- clean up release notes formatting and update netlify-cli to 23.12.2 (306b6dd)
+- update release notes for 0.1.5 (e59bd71)
+- add Packagist link to SentryResolve project (c8edfc5)
+- add SentryResolve project to open-source projects list (4f6928a)
+- add jws security override to address netlify-cli vulnerability (477cf7e)
+- update SentryResolve project highlights to be more accurate (6ccb612)
 
 ## 0.1.5 – 🧹 Chores
 
