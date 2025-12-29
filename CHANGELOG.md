@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/programinglive/programinglive/compare/v0.1.6...v0.1.7) (2025-12-29)
+
+
+### 🐛 Bug Fixes
+
+* configure npm to omit optional deps and document audit limitations on Windows ([2151671](https://github.com/programinglive/programinglive/commit/21516713e773f0f1f91c97ee2a4f32589edfe2ba))
+* resolve npm audit EBADPLATFORM error by using legacy-peer-deps ([cc0500f](https://github.com/programinglive/programinglive/commit/cc0500fb395b5208b26583e9292331ef4181668d))
+* resolve npm platform compatibility issues on Windows ([3320a88](https://github.com/programinglive/programinglive/commit/3320a8820527c355b5a6a6cee546df3654044e06))
+
+
+### 🧹 Chores
+
+* align package metadata and overrides for npm audit ([12081f7](https://github.com/programinglive/programinglive/commit/12081f7aa08bc305529e09c3c0466fb6bee5d1df))
+
+
+### 🏗️ Build System
+
+* ensure npm audit compatibility on windows ([8ad6de7](https://github.com/programinglive/programinglive/commit/8ad6de716c2c04b54e8a067626ddea7f900fb023))
+
 ### [0.1.6](https://github.com/programinglive/programinglive/compare/v0.1.5...v0.1.6) (2025-12-29)
 
 
