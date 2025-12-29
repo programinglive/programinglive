@@ -14,17 +14,6 @@
 | 0.0.2 | 2025-11-12 | update release notes for 0.0.1 (a506f11) |
 | 0.0.1 | 2025-11-12 | See CHANGELOG for details. |
 
-
-
-
-
-
-
-
-
-
-
-
 ## 0.1.5 – 🧹 Chores
 
 Released on **2025-12-02**.
