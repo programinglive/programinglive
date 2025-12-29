@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/programinglive/programinglive/compare/v0.1.5...v0.1.6) (2025-12-29)
+
+
+### 🧹 Chores
+
+* clean up release notes formatting and update netlify-cli to 23.12.2 ([306b6dd](https://github.com/programinglive/programinglive/commit/306b6dde8c5eb4603f813b91933c1612ca17b09f))
+* update release notes for 0.1.5 ([e59bd71](https://github.com/programinglive/programinglive/commit/e59bd71554af7c7211ee8ed6d4cbc29cdd687d66))
+
+
+### ✨ Features
+
+* add Packagist link to SentryResolve project ([c8edfc5](https://github.com/programinglive/programinglive/commit/c8edfc5e2aaff2c718e34f0b43a38f8b6940918e))
+* add SentryResolve project to open-source projects list ([4f6928a](https://github.com/programinglive/programinglive/commit/4f6928aba5150a8886ce714b6ee5908916afb248))
+
+
+### 🐛 Bug Fixes
+
+* add jws security override to address netlify-cli vulnerability ([477cf7e](https://github.com/programinglive/programinglive/commit/477cf7ed6f3a88005c87ae7bc8808941c61ee741))
+* update SentryResolve project highlights to be more accurate ([6ccb612](https://github.com/programinglive/programinglive/commit/6ccb612002a9a5fa6976b02e0a55973bcd3b0f88))
+
 ### [0.1.5](https://github.com/programinglive/programinglive/compare/v0.1.4...v0.1.5) (2025-12-02)
 
 
