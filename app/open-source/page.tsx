@@ -43,9 +43,9 @@ const projects = [
     description:
       'A streamlined interface for managing Sentry issues, providing quick access to error tracking, assignment, and resolution workflows.',
     highlights: [
-      'Clean dashboard interface for monitoring application errors and performance issues.',
-      'Simplified issue management with quick assignment and status updates.',
-      'Integration-ready design for easy deployment with existing Sentry projects.',
+      'Simple and clean interface for managing Sentry issues and errors.',
+      'Quick issue assignment and status tracking for development teams.',
+      'Lightweight solution for Sentry project management and monitoring.',
     ],
     links: [
       { label: 'View Website', href: 'https://sentryresolve.programinglive.com/' },
