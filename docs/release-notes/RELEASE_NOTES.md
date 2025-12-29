@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.1.7 | 2025-12-29 | configure npm to omit optional deps and document audit limitations on Windows (2151671) |
 | 0.1.6 | 2025-12-29 | clean up release notes formatting and update netlify-cli to 23.12.2 (306b6dd) |
 | 0.1.5 | 2025-12-02 | prepare release (ef04063) |
 | 0.1.4 | 2025-11-27 | update hero text and meta description to emphasize Indonesian programmer community (9b269ef) |
@@ -15,6 +16,17 @@
 | 0.0.2 | 2025-11-12 | update release notes for 0.0.1 (a506f11) |
 | 0.0.1 | 2025-11-12 | See CHANGELOG for details. |
 
+
+
+## 0.1.7 – 🐛 Bug Fixes
+
+Released on **2025-12-29**.
+
+- configure npm to omit optional deps and document audit limitations on Windows (2151671)
+- resolve npm audit EBADPLATFORM error by using legacy-peer-deps (cc0500f)
+- resolve npm platform compatibility issues on Windows (3320a88)
+- align package metadata and overrides for npm audit (12081f7)
+- ensure npm audit compatibility on windows (8ad6de7)
 
 ## 0.1.6 – 🧹 Chores
 
