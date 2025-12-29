@@ -37,6 +37,21 @@ const projects = [
       { label: 'View on npm', href: 'https://www.npmjs.com/package/@programinglive/commiter' },
     ],
   },
+  {
+    name: 'SentryResolve',
+    tagline: 'Simplified error tracking and issue resolution dashboard.',
+    description:
+      'A streamlined interface for managing Sentry issues, providing quick access to error tracking, assignment, and resolution workflows.',
+    highlights: [
+      'Clean dashboard interface for monitoring application errors and performance issues.',
+      'Simplified issue management with quick assignment and status updates.',
+      'Integration-ready design for easy deployment with existing Sentry projects.',
+    ],
+    links: [
+      { label: 'View Website', href: 'https://sentryresolve.programinglive.com/' },
+      { label: 'GitHub Repo', href: 'https://github.com/programinglive/sentryresolve' },
+    ],
+  },
 ]
 
 export default function OpenSourcePage() {
