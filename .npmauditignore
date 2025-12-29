@@ -1,0 +1,9 @@
+# Known Issues
+
+## jws vulnerability (GHSA-869p-cjfg-cm3x)
+- Severity: high
+- Location: netlify-cli > jws
+- Status: Cannot fix - nested dependency in netlify-cli
+- Reason: npm audit fix fails on Windows due to EBADPLATFORM error with @rollup/rollup-android-arm-eabi
+- Mitigation: This is a transitive dependency; override added in package.json but npm audit fix still checks platform compatibility
+- Last checked: 2025-12-29
