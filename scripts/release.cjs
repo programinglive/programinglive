@@ -11,6 +11,9 @@ const FS_FOK_PRELOAD_FLAG = buildPreloadFlag(fsFokPreloadPath);
 
 require('./preload/fs-f-ok.cjs');
 
+const DEFAULT_PRD_RELATIVE_PATH = path.join('docs', 'PRD.md');
+const DEFAULT_PRD_DISPLAY_PATH = 'docs/PRD.md';
+
 const VALID_RELEASE_TYPES = new Set([
   'major',
   'minor',
@@ -26,18 +29,18 @@ const SEMVER_REGEX = /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/;
 const LOCKFILE_PREFERENCES = [
   { manager: 'pnpm', file: 'pnpm-lock.yaml' },
   { manager: 'yarn', file: 'yarn.lock' },
-  { manager: 'bun', file: 'bun.lockb' },
+  { manager: 'bun', file: 'bun.lock' },
   { manager: 'npm', file: 'package-lock.json' }
 ];
 
 function getCliArguments(argv = process.argv) {
   const rawArgs = argv.slice(2);
   if (rawArgs.length === 0) {
-    return { releaseType: undefined, extraArgs: [] };
+    return { releaseType: 'patch', extraArgs: [] };
   }
 
   if (rawArgs[0].startsWith('-')) {
-    return { releaseType: undefined, extraArgs: rawArgs };
+    return { releaseType: 'patch', extraArgs: rawArgs };
   }
 
   const [firstArg, ...rest] = rawArgs;
@@ -60,7 +63,14 @@ function getNpmRunArgument(env = process.env) {
 
 function buildStandardVersionArgs({ releaseType, extraArgs }) {
   const args = [];
-  if (releaseType) {
+  
+  // Handle --first-release flag
+  const isFirstRelease = Array.isArray(extraArgs) && extraArgs.includes('--first-release');
+  if (isFirstRelease) {
+    args.push('--release-as', '0.0.1');
+    // Remove --first-release from extraArgs to avoid passing it to standard-version
+    extraArgs = extraArgs.filter(arg => arg !== '--first-release');
+  } else if (releaseType) {
     const normalized = releaseType.trim();
     const isValid = VALID_RELEASE_TYPES.has(normalized) || SEMVER_REGEX.test(normalized);
     if (!isValid) {
@@ -154,6 +164,8 @@ function runRelease({
     throw new Error('Working tree has uncommitted changes. Commit or stash before running release.');
   }
 
+  ensurePrdPresence({ cwd, dependencies });
+
   const testResult = runProjectTests({ spawn, env });
   if (testResult && typeof testResult.status === 'number' && testResult.status !== 0) {
     return testResult;
@@ -188,39 +200,6 @@ function runRelease({
     }
   }
 
-  let websiteVersionUpdated = false;
-  let websiteTimelineUpdated = false;
-
-  // Update website version
-  try {
-    console.log('🌐 Updating website version...');
-    const updateWebResult = spawnSync(process.execPath, ['scripts/update-web-version.js'], { stdio: 'inherit', cwd });
-    if (updateWebResult.status === 0) {
-      websiteVersionUpdated = true;
-    } else {
-      console.warn('⚠️  Failed to update website version');
-    }
-  } catch (error) {
-    console.warn(`⚠️  Skipping website version update: ${error.message}`);
-  }
-
-  // Update website releases timeline
-  try {
-    console.log('🌐 Updating website releases timeline...');
-    const updateTimelineResult = spawnSync(process.execPath, ['scripts/update-web-releases.js'], { stdio: 'inherit', cwd });
-    if (updateTimelineResult.status === 0) {
-      websiteTimelineUpdated = true;
-    } else {
-      console.warn('⚠️  Failed to update website releases timeline');
-    }
-  } catch (error) {
-    console.warn(`⚠️  Skipping website releases timeline update: ${error.message}`);
-  }
-
-  if (websiteVersionUpdated || websiteTimelineUpdated) {
-    spawnSync('git', ['add', 'web/index.html'], { stdio: 'inherit', cwd });
-  }
-
   return releaseResult;
 }
 if (require.main === module) {
@@ -245,8 +224,30 @@ module.exports = {
   detectPackageManager,
   runProjectTests,
   runRelease,
-  isWorkingTreeClean
+  isWorkingTreeClean,
+  ensurePrdPresence
 };
+
+function ensurePrdPresence({ cwd = process.cwd(), dependencies = {} } = {}) {
+  const {
+    fsExistsSync = fs.existsSync,
+    logger = console,
+    prdRelativePath = DEFAULT_PRD_RELATIVE_PATH,
+    prdDisplayPath = DEFAULT_PRD_DISPLAY_PATH
+  } = dependencies;
+
+  const resolvedPath = path.isAbsolute(prdRelativePath)
+    ? prdRelativePath
+    : path.join(cwd, prdRelativePath);
+
+  if (fsExistsSync(resolvedPath)) {
+    return true;
+  }
+
+  const warn = typeof logger?.warn === 'function' ? logger.warn.bind(logger) : console.warn.bind(console);
+  warn(`⚠️  Product Requirements Document missing (${prdDisplayPath}). Add ${DEFAULT_PRD_DISPLAY_PATH} so teams understand release expectations.`);
+  return false;
+}
 
 function buildPreloadFlag(filePath) {
   const resolved = path.resolve(filePath);

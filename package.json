@@ -12,11 +12,12 @@
     "release": "node scripts/release.cjs",
     "release:major": "node scripts/release.cjs major",
     "release:minor": "node scripts/release.cjs minor",
-    "release:patch": "node scripts/release.cjs patch"
+    "release:patch": "node scripts/release.cjs patch",
+    "release:first": "node scripts/release.cjs --first-release"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.1.0",
-    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
     "@netlify/plugin-nextjs": "^5.8.0",
     "@programinglive/commiter": "^1.2.17",
     "@types/react": "^18.2.70",
