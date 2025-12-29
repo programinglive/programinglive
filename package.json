@@ -1,5 +1,5 @@
 {
-  "name": "my-vibe-site",
+  "name": "programinglive",
   "private": true,
   "version": "0.1.6",
   "type": "module",
@@ -81,6 +81,8 @@
   "overrides": {
     "glob": "^10.5.0",
     "jws": "^3.2.3",
+    "@rollup/rollup-android-arm-eabi": "npm:@rollup/rollup-win32-x64-msvc",
+    "@rollup/rollup-android-arm64": "npm:@rollup/rollup-win32-x64-msvc",
     "@rollup/rollup-darwin-arm64": "npm:@rollup/rollup-win32-x64-msvc",
     "@rollup/rollup-darwin-x64": "npm:@rollup/rollup-win32-x64-msvc",
     "@rollup/rollup-linux-arm-gnueabihf": "npm:@rollup/rollup-win32-x64-msvc",
@@ -92,7 +94,6 @@
     "@rollup/rollup-linux-x64-musl": "npm:@rollup/rollup-win32-x64-msvc"
   },
   "dependencies": {
-    "netlify-cli": "^23.13.0",
     "next": "^14.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
