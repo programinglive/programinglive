@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.1.8 | 2026-01-15 | add release notes for v0.1.7 (296c6a6) |
 | 0.1.7 | 2025-12-29 | configure npm to omit optional deps and document audit limitations on Windows (2151671) |
 | 0.1.6 | 2025-12-29 | clean up release notes formatting and update netlify-cli to 23.12.2 (306b6dd) |
 | 0.1.5 | 2025-12-02 | prepare release (ef04063) |
@@ -17,6 +18,14 @@
 | 0.0.1 | 2025-11-12 | See CHANGELOG for details. |
 
 
+
+
+## 0.1.8 – 📝 Documentation
+
+Released on **2026-01-15**.
+
+- add release notes for v0.1.7 (296c6a6)
+- add qs override to resolve security vulnerability (4bf512e)
 
 ## 0.1.7 – 🐛 Bug Fixes
 
