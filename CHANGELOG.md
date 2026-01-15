@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/programinglive/programinglive/compare/v0.1.7...v0.1.8) (2026-01-15)
+
+
+### 📝 Documentation
+
+* add release notes for v0.1.7 ([296c6a6](https://github.com/programinglive/programinglive/commit/296c6a6d4c78016008a233607fbccee8aa2d0e27))
+
+
+### 🐛 Bug Fixes
+
+* add qs override to resolve security vulnerability ([4bf512e](https://github.com/programinglive/programinglive/commit/4bf512e78c53adfda1d475f551895112aaffcbea))
+
 ### [0.1.7](https://github.com/programinglive/programinglive/compare/v0.1.6...v0.1.7) (2025-12-29)
 
 
