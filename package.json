@@ -80,6 +80,7 @@
     ]
   },
   "overrides": {
+    "qs": "^6.14.1",
     "glob": "^10.5.0",
     "jws": "^3.2.3",
     "@rollup/rollup-android-arm-eabi": "npm:@rollup/rollup-win32-x64-msvc",
