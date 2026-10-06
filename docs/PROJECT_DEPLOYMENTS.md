@@ -10,7 +10,7 @@ This page is the portal-level index for deployment setup across Programinglive p
 - Production path: `/usr/share/nginx/belajar`; Nginx document root: `/usr/share/nginx/belajar/public`.
 - CI: [GitHub Actions](https://github.com/programinglive/belajar/actions) runs on pushes/PRs to `master` and version tags.
 - CD: tag-driven polling by `/root/command/deploy_all.sh` on `bw-server`, scheduled every five minutes. The project entry deploys the newest `v*` tag to `/usr/share/nginx/belajar`.
-- Release gate: publish a version tag only after its CI workflow succeeds. The server poller does not itself wait for or validate the GitHub Actions result.
+- Release gate: wait for the `master` CI run to pass, then run `npm run release:patch` (or `release:minor` / `release:major`) in Belajar to create/publish the tag. The server poller does not itself wait for or validate the GitHub Actions result.
 - Preserved production state: `.env` and `storage` are excluded from the code sync; Laravel migrations and cache refreshes run as part of deployment.
 - Detailed runbook: [`belajar/docs/DEPLOYMENT.md`](https://github.com/programinglive/belajar/blob/master/docs/DEPLOYMENT.md).
 
