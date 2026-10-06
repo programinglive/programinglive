@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/programinglive/programinglive/compare/v0.1.9...v0.1.10) (2026-10-06)
+
+
+### 📝 Documentation
+
+* update release notes for v0.1.9 ([09e61b1](https://github.com/programinglive/programinglive/commit/09e61b104255e57307e923d3de26ec4b8df9778e))
+
+
+### 🐛 Bug Fixes
+
+* support manual production deployment ([2807b17](https://github.com/programinglive/programinglive/commit/2807b1735ce982f8c3c2b1a71c43c092a38863c7))
+* upgrade vulnerable web dependencies ([ece5736](https://github.com/programinglive/programinglive/commit/ece5736e733c68ca99805fc3b7c83f4ef9a5deeb))
+
 ### [0.1.9](https://github.com/programinglive/programinglive/compare/v0.1.8...v0.1.9) (2026-10-06)
 
 
