@@ -57,6 +57,21 @@ Exit criteria: each promoted community activity has a real destination, owner, n
 - [ ] Use the results to improve the curriculum and remove inactive or misleading calls to action.
 - [ ] Keep personal assistant activity and learner/community data separate unless a clear, consented need is established.
 
+## P6 — Build an institutional-grade, dual-audience web experience
+
+Status: in progress.
+
+- [x] Audit the existing website across positioning, information architecture, learner and institutional journeys, content, accessibility, performance, SEO, and maintainability.
+- [x] Reposition the homepage around accessible technology education and a visible path from learning to opportunity.
+- [x] Create dedicated About, Programs, Learn, Impact, Partners, Roadmap, Blog, and Contact destinations without removing the public bulletin or existing project links.
+- [x] Establish a reusable design system and CMS-ready content model for programs, learner levels, partnerships, status, and impact progression.
+- [x] Add an English-first language switcher, an initial Bahasa Indonesia homepage, structured metadata, sitemap, robots rules, keyboard focus, skip navigation, and reduced-motion support.
+- [x] Add an automated production pilot that follows learner and institutional journeys through API/HTTP and a real browser, then reports the result to Discord.
+- [ ] Complete Bahasa Indonesia parity across all core pages and validate terminology with learners and institutional stakeholders.
+- [ ] Test the redesigned journeys with representative learners and institutional visitors, then publish evidence-based improvements.
+
+Exit criteria: a learner can identify where to start within ten seconds; an institution can understand the program and partnership model; a funder can understand stage and measurement; and a developer can find an appropriate contribution path.
+
 ## Daily Codex working agreement
 
 1. Review the selected repository's Git status and existing changes before editing; preserve unrelated work.

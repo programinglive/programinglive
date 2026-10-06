@@ -1,7 +1,7 @@
 {
   "updatedAt": "October 7, 2026",
-  "currentFocus": "Add minimal, consent-based progress tracking for Belajar's first learning track without requiring it to access the lessons.",
-  "nextUp": "Run a small beginner pilot, review completion signals, and improve the track from real learner feedback.",
+  "currentFocus": "Validate the redesigned learner and institutional journeys while continuing consent-based progress work for Belajar.",
+  "nextUp": "Complete bilingual content parity, test the new information architecture with real users, and prepare CMS-ready content workflows.",
   "roadmapUrl": "https://github.com/programinglive/programinglive/blob/main/docs/IMPLEMENTATION_ROADMAP.md",
   "goals": [
     {
@@ -51,6 +51,14 @@
       "completed": 0,
       "total": 3,
       "summary": "Review privacy-conscious learning, project, and contribution outcomes."
+    },
+    {
+      "priority": "P6",
+      "title": "Institutional-grade web experience",
+      "status": "In progress",
+      "completed": 6,
+      "total": 8,
+      "summary": "The new positioning, dual-audience experience, core information architecture, design system, trust foundations, and production pilot bot are implemented. Bilingual parity and user validation remain."
     }
   ]
 }

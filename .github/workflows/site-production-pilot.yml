@@ -1,0 +1,61 @@
+name: ProgramingLive production pilot
+
+on:
+  workflow_run:
+    workflows: [ProgramingLive CI/CD]
+    types: [completed]
+  workflow_dispatch:
+  schedule:
+    - cron: '31 1 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  pilot:
+    name: Complete learner and institution journeys
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' && startsWith(github.event.workflow_run.head_branch, 'v'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run production API and HTTP journey
+        id: api
+        continue-on-error: true
+        run: node scripts/site-api-smoke.cjs
+        env:
+          SITE_PILOT_BASE_URL: https://programinglive.com
+          SITE_PILOT_EXPECTED_VERSION: ${{ github.event.workflow_run.head_branch }}
+      - name: Run production browser journey
+        id: browser
+        continue-on-error: true
+        run: node scripts/site-browser-smoke.cjs
+        env:
+          SITE_PILOT_BASE_URL: https://programinglive.com
+      - name: Report result to Discord
+        if: always()
+        run: node scripts/post-site-pilot-result.cjs
+        env:
+          DISCORD_BULLETIN_WEBHOOK_URL: ${{ secrets.DISCORD_BULLETIN_WEBHOOK_URL }}
+          SITE_API_RESULT: ${{ steps.api.outcome }}
+          SITE_BROWSER_RESULT: ${{ steps.browser.outcome }}
+      - name: Enforce pilot result
+        if: always()
+        env:
+          SITE_API_RESULT: ${{ steps.api.outcome }}
+          SITE_BROWSER_RESULT: ${{ steps.browser.outcome }}
+        run: |
+          if [[ "$SITE_API_RESULT" != "success" || "$SITE_BROWSER_RESULT" != "success" ]]; then
+            exit 1
+          fi

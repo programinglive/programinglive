@@ -1,153 +1,19 @@
-"use client"
+'use client'
 
 import { useMemo, useState } from 'react'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import SiteShell from '../../components/SiteShell'
+import { Container, PageHero } from '../../components/ui'
 
-const projects = [
-  {
-    name: 'Dev Workflow Knowledge Hub',
-    tagline: 'History, commands, and documentation unified into one dashboard.',
-    description:
-      'A read-only dashboard that shows workflow history, release cadence, and MCP command docs so every task stays disciplined.',
-    highlights: [
-      'Live Insights connect directly to .state history to visualize progress trends and release cadence.',
-      'Built-in playbook outlines every MCP tool with prerequisites, recommended usage, and follow-up steps.',
-      'Includes hosted docs plus a GitHub repo, making self-hosting as simple as running `node index.js`.',
-    ],
-    links: [
-      { label: 'View Website', href: 'https://devworkflow.programinglive.com/' },
-      { label: 'GitHub Repo', href: 'https://github.com/programinglive/dev-workflow-mcp-server' },
-      { label: 'View on npm', href: 'https://www.npmjs.com/package/@programinglive/dev-workflow-mcp-server' },
-    ],
-  },
-  {
-    name: 'Commiter',
-    tagline: 'Standardized commits and automated releases powered by conventional commits.',
-    description:
-      'A CLI toolkit built on standard-version that enforces commit conventions, bumps semantic versions, and generates icon-rich changelogs for every repository.',
-    highlights: [
-      'Validates commit messages via Husky hooks so every contribution follows the same format.',
-      'Automates semantic versioning (major / minor / patch) and changelog generation with a single command.',
-      'Provides release helpers for npm publishing and GitHub Actions plus a dry-run workflow for safe testing.',
-    ],
-    links: [
-      { label: 'View Website', href: 'https://commiter.programinglive.com/' },
-      { label: 'GitHub Repo', href: 'https://github.com/programinglive/commiter' },
-      { label: 'View on npm', href: 'https://www.npmjs.com/package/@programinglive/commiter' },
-    ],
-  },
-  {
-    name: 'SentryResolve',
-    tagline: 'Simplified error tracking and issue resolution dashboard.',
-    description:
-      'A streamlined interface for managing Sentry issues, providing quick access to error tracking, assignment, and resolution workflows.',
-    highlights: [
-      'Simple and clean interface for managing Sentry issues and errors.',
-      'Quick issue assignment and status tracking for development teams.',
-      'Lightweight solution for Sentry project management and monitoring.',
-    ],
-    links: [
-      { label: 'View Website', href: 'https://sentryresolve.programinglive.com/' },
-      { label: 'GitHub Repo', href: 'https://github.com/programinglive/sentry-resolve' },
-      { label: 'View on Packagist', href: 'https://packagist.org/packages/programinglive/sentry-resolve' },
-    ],
-  },
+type Difficulty = 'Beginner' | 'Intermediate' | 'Advanced'
+const projects: Array<{ name: string; objective: string; stack: string; difficulty: Difficulty; status: string; maintainers: string; repository: string; website: string; tasks: string }> = [
+  { name: 'Dev Workflow Knowledge Hub', objective: 'Make workflow history, commands, and operational documentation easier to inspect.', stack: 'Node.js · MCP · Web', difficulty: 'Intermediate', status: 'Maintained', maintainers: 'ProgramingLive', repository: 'https://github.com/programinglive/dev-workflow-mcp-server', website: 'https://devworkflow.programinglive.com/', tasks: 'Documentation and tested setup improvements are the safest starting point.' },
+  { name: 'Commiter', objective: 'Standardize conventional commits, versioning, and release automation.', stack: 'Node.js · npm · GitHub Actions', difficulty: 'Intermediate', status: 'Maintained', maintainers: 'ProgramingLive', repository: 'https://github.com/programinglive/commiter', website: 'https://commiter.programinglive.com/', tasks: 'Documentation, examples, and cross-platform validation.' },
+  { name: 'SentryResolve', objective: 'Provide a focused interface for issue triage and resolution workflows.', stack: 'PHP · Sentry API · Web', difficulty: 'Advanced', status: 'Maintained', maintainers: 'ProgramingLive', repository: 'https://github.com/programinglive/sentry-resolve', website: 'https://sentryresolve.programinglive.com/', tasks: 'Setup documentation and clearly scoped issues after local validation.' },
 ]
 
 export default function OpenSourcePage() {
   const [query, setQuery] = useState('')
-  const filteredProjects = useMemo(() => {
-    const value = query.toLowerCase().trim()
-    if (!value) return projects
-    return projects.filter((project) => {
-      return (
-        project.name.toLowerCase().includes(value) ||
-        project.tagline.toLowerCase().includes(value) ||
-        project.description.toLowerCase().includes(value)
-      )
-    })
-  }, [query])
-
-  return (
-    <main className="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
-      <Navbar />
-      <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-6 pb-12 sm:px-10 lg:pb-16">
-        <section className="pt-10 space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Open Source</p>
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-            Open Source Projects
-          </h1>
-          <p className="max-w-2xl text-sm text-slate-600">
-            From core libraries to developer tools, see all the open source projects we maintain.
-          </p>
-          <div className="space-y-2 pt-2">
-            <label htmlFor="project-search" className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-              Search
-            </label>
-            <input
-              id="project-search"
-              type="search"
-              placeholder="Search projects by name or keyword"
-              className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/10 sm:max-w-md"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-            />
-          </div>
-        </section>
-
-        <section className="space-y-8 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">All Projects</p>
-            <p className="text-sm text-slate-600">Complete list of our open source repositories.</p>
-          </div>
-
-          <div className="grid gap-6">
-            {filteredProjects.length === 0 && (
-              <p className="rounded-2xl border border-dashed border-slate-200 bg-slate-50/80 p-6 text-sm text-slate-600">
-                No projects match "{query}" yet. Try another keyword.
-              </p>
-            )}
-            {filteredProjects.map((project) => (
-              <article
-                key={project.name}
-                className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 transition hover:border-slate-300 hover:bg-white"
-              >
-                <div className="space-y-2">
-                  <p className="text-xs uppercase tracking-[0.35em] text-slate-500">{project.name}</p>
-                  <h2 className="text-xl font-semibold text-slate-900">{project.tagline}</h2>
-                  <p className="text-sm text-slate-600">{project.description}</p>
-                </div>
-
-                <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                  {project.highlights.map((highlight) => (
-                    <li key={highlight} className="flex gap-3">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-900" aria-hidden="true" />
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
-                  {project.links.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center rounded-full border border-slate-900 px-4 py-2 text-slate-900 transition hover:bg-slate-900 hover:text-white"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <Footer />
-      </div>
-    </main>
-  )
+  const [difficulty, setDifficulty] = useState<'All' | Difficulty>('All')
+  const filtered = useMemo(() => projects.filter((project) => (difficulty === 'All' || project.difficulty === difficulty) && `${project.name} ${project.objective} ${project.stack}`.toLowerCase().includes(query.toLowerCase().trim())), [query, difficulty])
+  return <SiteShell><PageHero eyebrow="Open source as a learning pathway" title="Move from structured learning into real development environments" description="Learners gradually progress toward documentation, bug fixes, features, and community projects. Every project should make its objective, setup, difficulty, contribution expectations, maintainers, and status clear." /><Container className="py-14 sm:py-20"><div className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-5 md:grid-cols-[1fr_auto] md:items-end"><label className="grid gap-2 text-sm font-medium"><span>Search projects</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Name, objective, or technology" className="min-h-11 rounded-xl border border-slate-300 px-3 focus:border-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-700/20" /></label><fieldset><legend className="text-sm font-medium">Difficulty</legend><div className="mt-2 flex flex-wrap gap-2">{(['All', 'Beginner', 'Intermediate', 'Advanced'] as const).map((value) => <button key={value} type="button" aria-pressed={difficulty === value} onClick={() => setDifficulty(value)} className={`min-h-10 rounded-full px-4 text-sm font-semibold ${difficulty === value ? 'bg-slate-950 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}>{value}</button>)}</div></fieldset></div><div className="mt-8 grid gap-5">{filtered.length === 0 && <p className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center text-slate-600">No projects match this filter. Beginner-ready tasks are still being prepared and will not be labelled prematurely.</p>}{filtered.map((project) => <article key={project.name} className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8"><div className="flex flex-col justify-between gap-5 md:flex-row"><div><div className="flex flex-wrap gap-2"><span className="rounded-full bg-cyan-50 px-2.5 py-1 text-xs font-semibold text-cyan-800">{project.difficulty}</span><span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">{project.status}</span></div><h2 className="mt-4 text-2xl font-semibold">{project.name}</h2><p className="mt-3 max-w-3xl leading-7 text-slate-600">{project.objective}</p></div><div className="flex shrink-0 flex-wrap gap-2"><a href={project.repository} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center rounded-full bg-slate-950 px-5 text-sm font-semibold text-white hover:bg-cyan-800">Repository ↗</a><a href={project.website} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center rounded-full border border-slate-300 px-5 text-sm font-semibold hover:bg-slate-50">Website ↗</a></div></div><dl className="mt-7 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 md:grid-cols-3"><div className="bg-slate-50 p-4"><dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">Technology stack</dt><dd className="mt-2 text-sm">{project.stack}</dd></div><div className="bg-slate-50 p-4"><dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">Beginner-friendly tasks</dt><dd className="mt-2 text-sm leading-6">{project.tasks}</dd></div><div className="bg-slate-50 p-4"><dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">Active maintainers</dt><dd className="mt-2 text-sm">{project.maintainers}</dd></div></dl></article>)}</div></Container></SiteShell>
 }

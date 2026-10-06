@@ -1,100 +1,52 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { classNames } from '../lib/utils'
+import { Container } from './ui'
+
+const primaryLinks = [
+  { label: 'About', href: '/about' },
+  { label: 'Programs', href: '/programs' },
+  { label: 'Learn', href: '/learn' },
+  { label: 'Open Source', href: '/open-source' },
+  { label: 'Impact', href: '/impact' },
+  { label: 'Partners', href: '/partners' },
+  { label: 'Roadmap', href: '/roadmap' },
+]
 
 export default function Navbar() {
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
 
-  const menuBaseClasses =
-    'w-full space-y-2 md:flex md:w-auto md:items-center md:gap-6 md:space-y-0'
-
   return (
-    <nav className="sticky top-0 z-20 bg-white/95 text-sm font-medium text-slate-600 shadow-sm backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-3 sm:px-10">
-        <Link href="/" className="flex items-center gap-3 text-slate-900 hover:text-slate-900">
-          <img
-            alt="ProgramingLive logo"
-            className="h-9 w-9 rounded-full border border-slate-200 object-cover"
-            src="/logo_prograiminglive.png"
-          />
-          <span className="text-lg font-semibold tracking-tight">ProgramingLive</span>
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
+      <Container className="flex min-h-16 items-center justify-between gap-5">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5 rounded-md text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700">
+          <img alt="" className="h-8 w-8 rounded-full border border-slate-200 object-cover" src="/logo_prograiminglive.png" />
+          <span className="text-base font-semibold tracking-tight">ProgramingLive</span>
         </Link>
 
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-full p-2 text-slate-800 transition hover:bg-slate-100 md:hidden"
-          aria-label="Toggle navigation menu"
-          onClick={() => setIsOpen((open) => !open)}
-        >
-          <span className="sr-only">Toggle navigation</span>
-          <span className="flex h-4 w-4 flex-col justify-between">
-            <span className="block h-0.5 w-full rounded-full bg-slate-800" />
-            <span className="block h-0.5 w-full rounded-full bg-slate-800" />
-            <span className="block h-0.5 w-full rounded-full bg-slate-800" />
-          </span>
+        <button type="button" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-slate-200 text-slate-800 md:hidden" aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={isOpen} aria-controls="primary-navigation" onClick={() => setIsOpen((open) => !open)}>
+          <span aria-hidden="true" className="text-xl leading-none">{isOpen ? '×' : '≡'}</span>
         </button>
 
-        <div
-          className={classNames(
-            'w-full border-t border-slate-200 pt-3 md:w-auto md:border-0 md:pt-0',
-            !isOpen && 'hidden md:block'
-          )}
-        >
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-6">
-            <div className={classNames(menuBaseClasses, 'border-0 pt-0 md:border-0 md:pt-0')}>
-              <Link
-                href="/#vision"
-                className="block text-left transition hover:text-slate-900 md:inline-flex md:items-center md:gap-1"
-              >
-                Vision
+        <nav id="primary-navigation" aria-label="Primary navigation" className={`${isOpen ? 'flex' : 'hidden'} absolute inset-x-0 top-16 flex-col gap-1 border-b border-slate-200 bg-white p-5 shadow-lg md:static md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}>
+          {primaryLinks.map((link) => {
+            const active = pathname === link.href
+            return (
+              <Link key={link.href} href={link.href} aria-current={active ? 'page' : undefined} onClick={() => setIsOpen(false)} className={`rounded-full px-3 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700 ${active ? 'bg-cyan-50 text-cyan-900' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-950'}`}>
+                {link.label}
               </Link>
-              <Link
-                href="/#mission"
-                className="block text-left transition hover:text-slate-900 md:inline-flex md:items-center md:gap-1"
-              >
-                Mission
-              </Link>
-              <Link
-                href="/programs"
-                className="block text-left transition hover:text-slate-900 md:inline-flex md:items-center md:gap-1"
-              >
-                Programs
-              </Link>
-              <Link
-                href="/#development-progress"
-                className="block text-left transition hover:text-slate-900 md:inline-flex md:items-center md:gap-1"
-              >
-                Progress
-              </Link>
-              <Link
-                href="/open-source"
-                className="block text-left transition hover:text-slate-900 md:inline-flex md:items-center md:gap-1"
-              >
-                Open Source
-              </Link>
-              <Link
-                href="/#sponsor"
-                className="block text-left transition hover:text-slate-900 md:inline-flex md:items-center md:gap-1"
-              >
-                Sponsors
-              </Link>
-            </div>
-            <a
-              href="https://github.com/programinglive"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 p-2 text-slate-700 transition hover:border-slate-300 hover:text-slate-900"
-              aria-label="ProgramingLive on GitHub"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                <path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.51 2.87 8.33 6.84 9.69.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.49-1.1-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.67.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05a9.28 9.28 0 0 1 5 0c1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.65.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.82-4.59 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .26.18.59.69.48A10.2 10.2 0 0 0 22 12.2C22 6.58 17.52 2 12 2z" />
-              </svg>
-            </a>
+            )
+          })}
+          <div className="my-2 h-px bg-slate-200 md:mx-2 md:my-0 md:h-6 md:w-px" />
+          <div className="flex items-center gap-1" aria-label="Language">
+            <Link href="/" hrefLang="en" className={`rounded-full px-3 py-2 text-xs font-semibold ${pathname !== '/id' ? 'bg-slate-950 text-white' : 'text-slate-600 hover:bg-slate-100'}`}>EN</Link>
+            <Link href="/id" hrefLang="id" className={`rounded-full px-3 py-2 text-xs font-semibold ${pathname === '/id' ? 'bg-slate-950 text-white' : 'text-slate-600 hover:bg-slate-100'}`}>ID</Link>
           </div>
-        </div>
-      </div>
-    </nav>
+        </nav>
+      </Container>
+    </header>
   )
 }
