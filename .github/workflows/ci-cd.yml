@@ -6,6 +6,13 @@ on:
   push:
     branches: [main]
     tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      deploy_production:
+        description: Deploy the selected ref to Netlify production after checks pass
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -35,7 +42,7 @@ jobs:
 
   deploy-production:
     name: Deploy release to Netlify production
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    if: (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')) || (github.event_name == 'workflow_dispatch' && inputs.deploy_production)
     needs: verify
     runs-on: ubuntu-latest
     environment:

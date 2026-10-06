@@ -8,6 +8,7 @@ The `.github/workflows/ci-cd.yml` workflow:
 
 - runs `npm ci`, `npm test`, and `npm run build` for pull requests and pushes to `main`;
 - deploys a version tag matching `v*` to Netlify production only after the verification job passes;
+- supports a manually approved production run through **Actions → ProgramingLive CI/CD → Run workflow** by selecting `deploy_production`; checks still run first;
 - serializes production deployments so two tags cannot switch production simultaneously.
 
 ## One-time GitHub setup
