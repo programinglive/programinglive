@@ -1,8 +1,19 @@
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import developmentProgress from '../data/development-progress.json'
+
+const statusStyles = {
+  Complete: 'bg-emerald-100 text-emerald-800',
+  'In progress': 'bg-amber-100 text-amber-800',
+  Planned: 'bg-slate-100 text-slate-600',
+}
 
 export default function HomePage() {
+  const completedMilestones = developmentProgress.goals.reduce((total, goal) => total + goal.completed, 0)
+  const totalMilestones = developmentProgress.goals.reduce((total, goal) => total + goal.total, 0)
+  const progressPercentage = Math.round((completedMilestones / totalMilestones) * 100)
+
   return (
     <main id="top" className="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
       <Navbar />
@@ -36,6 +47,100 @@ export default function HomePage() {
             </div>
           </section>
         </header>
+
+        <section
+          id="development-progress"
+          aria-labelledby="development-progress-title"
+          className="scroll-mt-[72px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 text-white shadow-xl shadow-slate-200/60"
+        >
+          <div className="grid gap-8 p-8 lg:grid-cols-[1.1fr_1.9fr] lg:p-10">
+            <div className="flex flex-col justify-between gap-8">
+              <div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-300">Development bulletin</p>
+                  <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-slate-300">
+                    Updated {developmentProgress.updatedAt}
+                  </span>
+                </div>
+                <h2 id="development-progress-title" className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+                  Building in public, one verifiable goal at a time.
+                </h2>
+                <p className="mt-4 max-w-xl text-sm leading-6 text-slate-300">
+                  This bulletin reflects our public roadmap so the community can see what is complete, what we are working on,
+                  and what comes next.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Overall roadmap</p>
+                    <p className="mt-2 text-3xl font-semibold">{progressPercentage}%</p>
+                  </div>
+                  <p className="text-sm text-slate-300">
+                    {completedMilestones} of {totalMilestones} milestones
+                  </p>
+                </div>
+                <div
+                  role="progressbar"
+                  aria-label="Overall development roadmap progress"
+                  aria-valuemin={0}
+                  aria-valuemax={totalMilestones}
+                  aria-valuenow={completedMilestones}
+                  className="mt-4 h-2 overflow-hidden rounded-full bg-white/10"
+                >
+                  <div className="h-full rounded-full bg-gradient-to-r from-sky-400 to-emerald-400" style={{ width: `${progressPercentage}%` }} />
+                </div>
+              </div>
+
+              <a
+                href={developmentProgress.roadmapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-sky-300 transition hover:text-sky-200"
+              >
+                Read the source roadmap <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {developmentProgress.goals.map((goal) => (
+                <article key={goal.priority} className="rounded-2xl border border-white/10 bg-white/[0.07] p-5">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-sky-300">{goal.priority}</p>
+                      <h3 className="mt-1 font-semibold text-white">{goal.title}</h3>
+                    </div>
+                    <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${statusStyles[goal.status as keyof typeof statusStyles]}`}>
+                      {goal.status}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{goal.summary}</p>
+                  <div className="mt-4 flex items-center gap-3 text-xs text-slate-400">
+                    <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
+                      <div
+                        className="h-full rounded-full bg-sky-400"
+                        style={{ width: `${Math.round((goal.completed / goal.total) * 100)}%` }}
+                      />
+                    </div>
+                    <span>{goal.completed}/{goal.total}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid border-t border-white/10 bg-black/20 sm:grid-cols-2">
+            <div className="p-6 sm:border-r sm:border-white/10 lg:px-10">
+              <p className="text-xs font-semibold uppercase tracking-widest text-amber-300">Current focus</p>
+              <p className="mt-2 text-sm text-slate-200">{developmentProgress.currentFocus}</p>
+            </div>
+            <div className="border-t border-white/10 p-6 sm:border-t-0 lg:px-10">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Up next</p>
+              <p className="mt-2 text-sm text-slate-200">{developmentProgress.nextUp}</p>
+            </div>
+          </div>
+        </section>
 
         <section className="grid gap-6 lg:grid-cols-3">
           <article

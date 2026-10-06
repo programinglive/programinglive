@@ -63,6 +63,12 @@ export default function Navbar() {
                 Programs
               </Link>
               <Link
+                href="/#development-progress"
+                className="block text-left transition hover:text-slate-900 md:inline-flex md:items-center md:gap-1"
+              >
+                Progress
+              </Link>
+              <Link
                 href="/open-source"
                 className="block text-left transition hover:text-slate-900 md:inline-flex md:items-center md:gap-1"
               >

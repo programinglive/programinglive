@@ -1,0 +1,45 @@
+name: Publish development bulletin
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/development-progress.json
+      - scripts/post-development-bulletin.cjs
+      - .github/workflows/development-bulletin.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Post roadmap progress to Discord
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check Discord configuration
+        id: discord
+        shell: bash
+        env:
+          DISCORD_BULLETIN_WEBHOOK_URL: ${{ secrets.DISCORD_BULLETIN_WEBHOOK_URL }}
+        run: |
+          if [[ -n "$DISCORD_BULLETIN_WEBHOOK_URL" ]]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Discord bulletin skipped because DISCORD_BULLETIN_WEBHOOK_URL is not configured."
+          fi
+
+      - name: Publish bulletin
+        if: steps.discord.outputs.configured == 'true'
+        run: node scripts/post-development-bulletin.cjs
+        env:
+          DISCORD_BULLETIN_WEBHOOK_URL: ${{ secrets.DISCORD_BULLETIN_WEBHOOK_URL }}

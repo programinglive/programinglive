@@ -8,6 +8,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "test": "node --test",
+    "bulletin:discord": "node scripts/post-development-bulletin.cjs",
     "prepare": "husky",
     "release": "node scripts/release.cjs",
     "release:major": "node scripts/release.cjs major",

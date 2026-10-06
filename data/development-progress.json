@@ -1,0 +1,56 @@
+{
+  "updatedAt": "October 7, 2026",
+  "currentFocus": "Publish Belajar's first complete beginner track with sequenced lessons, practical labs, starter code, and a capstone.",
+  "nextUp": "Make each lab freely usable with an expected result and a self-check before adding progress tracking.",
+  "roadmapUrl": "https://github.com/programinglive/programinglive/blob/main/docs/IMPLEMENTATION_ROADMAP.md",
+  "goals": [
+    {
+      "priority": "P0",
+      "title": "Trustworthy foundations",
+      "status": "Complete",
+      "completed": 6,
+      "total": 6,
+      "summary": "Production source, links, tests, and the tagged Netlify release are verified."
+    },
+    {
+      "priority": "P1",
+      "title": "Complete beginner journey",
+      "status": "In progress",
+      "completed": 1,
+      "total": 5,
+      "summary": "The first learning outcome is defined. Lessons, labs, and the capstone come next."
+    },
+    {
+      "priority": "P2",
+      "title": "Indonesia Emas 2045 pilot",
+      "status": "Planned",
+      "completed": 0,
+      "total": 3,
+      "summary": "Turn the campaign into a concrete pilot with a public brief and participation path."
+    },
+    {
+      "priority": "P3",
+      "title": "Welcoming open source",
+      "status": "Planned",
+      "completed": 0,
+      "total": 3,
+      "summary": "Make it easier for first-time contributors to choose and run a project."
+    },
+    {
+      "priority": "P4",
+      "title": "Creator and community operations",
+      "status": "Planned",
+      "completed": 0,
+      "total": 3,
+      "summary": "Establish a sustainable publishing and collaboration rhythm."
+    },
+    {
+      "priority": "P5",
+      "title": "Measure meaningful outcomes",
+      "status": "Planned",
+      "completed": 0,
+      "total": 3,
+      "summary": "Review privacy-conscious learning, project, and contribution outcomes."
+    }
+  ]
+}
