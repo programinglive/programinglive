@@ -29,7 +29,19 @@ async function main() {
     ['/partners', 'Build a focused, measurable learning partnership'],
     ['/open-source', 'Open source as a learning pathway'],
     ['/roadmap', 'What is complete, what is moving, and what comes next'],
+    ['/about', 'An open learning platform built around practical progression'],
+    ['/blog', 'Evidence, lessons, and development updates'],
+    ['/contact', 'Start with the right conversation'],
     ['/id', 'Membangun Jalur dari Belajar Menuju Kesempatan'],
+    ['/id/programs', 'Program pembelajaran yang dirancang untuk perkembangan bertahap'],
+    ['/id/learn', 'Mulai dari langkah berikutnya yang mudah dipahami'],
+    ['/id/impact', 'Ukur perkembangan nyata, bukan sekadar impresi'],
+    ['/id/partners', 'Bangun kemitraan pembelajaran yang terarah dan terukur'],
+    ['/id/open-source', 'Beralih dari pembelajaran terstruktur ke lingkungan pengembangan nyata'],
+    ['/id/roadmap', 'Apa yang sudah selesai, sedang berjalan, dan rencana berikutnya'],
+    ['/id/about', 'Platform pembelajaran terbuka berbasis perkembangan nyata'],
+    ['/id/blog', 'Catatan kurikulum, keterampilan praktis, dan kabar pengembangan'],
+    ['/id/contact', 'Mulai percakapan yang sesuai kebutuhan'],
   ]
   for (const [path, marker] of expectations) {
     const { response, body } = await get(path)

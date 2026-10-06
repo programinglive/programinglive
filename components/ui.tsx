@@ -59,15 +59,28 @@ export function ButtonLink({
   return <Link href={href} className={className}>{children}</Link>
 }
 
-export function StatusBadge({ status }: { status: ProgramStatus | 'Complete' | 'In progress' }) {
-  const styles = {
+export function StatusBadge({
+  status,
+}: {
+  status: ProgramStatus | 'Complete' | 'In progress' | 'Selesai' | 'Sedang berjalan'
+}) {
+  const styles: Record<string, string> = {
     'Active pilot': 'bg-emerald-50 text-emerald-800 ring-emerald-600/20',
+    'Pilot aktif': 'bg-emerald-50 text-emerald-800 ring-emerald-600/20',
     'In development': 'bg-amber-50 text-amber-800 ring-amber-600/20',
+    'Sedang dikembangkan': 'bg-amber-50 text-amber-800 ring-amber-600/20',
     Planned: 'bg-slate-100 text-slate-700 ring-slate-600/20',
+    Direncanakan: 'bg-slate-100 text-slate-700 ring-slate-600/20',
     Complete: 'bg-emerald-50 text-emerald-800 ring-emerald-600/20',
+    Selesai: 'bg-emerald-50 text-emerald-800 ring-emerald-600/20',
     'In progress': 'bg-amber-50 text-amber-800 ring-amber-600/20',
+    'Sedang berjalan': 'bg-amber-50 text-amber-800 ring-amber-600/20',
   }
-  return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset ${styles[status]}`}>{status}</span>
+  return (
+    <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset ${styles[status] ?? 'bg-slate-100 text-slate-700 ring-slate-600/20'}`}>
+      {status}
+    </span>
+  )
 }
 
 export function PageHero({

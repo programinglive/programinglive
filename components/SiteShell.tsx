@@ -3,14 +3,16 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 import { Container } from './ui'
 
-export default function SiteShell({ children }: { children: ReactNode }) {
+export default function SiteShell({ children, locale = 'en' }: { children: ReactNode; locale?: 'en' | 'id' }) {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-950">
-      <a href="#main-content" className="skip-link">Skip to main content</a>
+    <div className="min-h-screen bg-slate-50 text-slate-950" lang={locale}>
+      <a href="#main-content" className="skip-link">
+        {locale === 'id' ? 'Loncat ke konten utama' : 'Skip to main content'}
+      </a>
       <Navbar />
       <main id="main-content">{children}</main>
       <Container>
-        <Footer />
+        <Footer locale={locale} />
       </Container>
     </div>
   )

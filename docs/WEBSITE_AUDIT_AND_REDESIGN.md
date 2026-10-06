@@ -1,7 +1,7 @@
 # ProgramingLive website audit and redesign plan
 
 Updated: October 7, 2026  
-Status: Phase 1 implemented; validation and bilingual parity remain.
+Status: Core redesign and Indonesian route parity implemented; human validation and secure inquiry processing remain.
 
 ## 1. Current website problems
 
@@ -148,7 +148,7 @@ Shared domain content is now stored in `data/site-content.ts`; the development b
 2. Phase 2: complete `/id` route parity, replace mail-client partnership submission with a secure server-side workflow, and add validated lesson data-usage reporting.
 3. Phase 3: connect typed content adapters to a CMS or repository-based content source without changing presentation components.
 4. Phase 4: add consent-based progress, privacy-respecting product analytics, error monitoring, and impact dashboards.
-5. Phase 5: validate with representative learners and institutions, then iterate from observed tasks rather than opinion alone.
+5. Phase 5: conduct human usability sessions with representative learners and institutions, then iterate from observed tasks rather than opinion alone.
 
 ## 10. Performance improvements
 
@@ -225,3 +225,38 @@ The marketing layer should consume typed content APIs even before a CMS is selec
 - Support school/community cohorts and mentor operations.
 - Publish annual reports and governance policies after review.
 - Expand regional and international collaboration based on validated delivery evidence.
+
+## 16. Automated journey verification & improvements
+
+### 16.1 Synthetic journey results
+
+Automated browser pilots and structural assertions were executed across the primary persona routes. These checks establish that the defined pages and interactions work for a synthetic browser user; they do not establish that representative people understand or prefer the experience.
+
+1. **Beginner Learner:**
+   - *Requirement:* Identify where to start within 10 seconds without friction or forced authentication.
+   - *Observation:* Both `/` and `/id` present a text-first call to action (`Start Learning` / `Mulai Belajar`) linking to the free curriculum. Copy says an account is not required to start.
+   - *Automated status:* Route and CTA presence verified. Human completion-time and comprehension validation remains.
+
+2. **Education & Community Institutions:**
+   - *Requirement:* Understand delivery models, duration, requirements, outputs, and partnership channels.
+   - *Observation:* Routes `/programs` and `/id/programs` expose program briefs with target learners, duration, delivery, requirements, outputs, metrics, and partnership options. The inquiry forms capture institutional context and prepare an email.
+   - *Automated status:* Routes, content presence, and form fields verified. Human comprehension and inquiry conversion remain untested.
+
+3. **Funders, Donors, and CSR Partners:**
+   - *Requirement:* Understand platform stage, measurement philosophy, and verified roadmap status.
+   - *Observation:* `/impact` and `/id/impact` identify the current stage as an early pilot, define a progression funnel, list planned metrics, and describe reporting principles. `/roadmap` and `/id/roadmap` use the shared development data.
+   - *Automated status:* Route/content presence verified. This does not establish measured program outcomes.
+
+4. **Technology Professionals & Contributors:**
+   - *Requirement:* Find canonical repositories, difficulty ratings, and appropriate contribution opportunities.
+   - *Observation:* `/open-source` and `/id/open-source` list projects with repository links, difficulty filters, and contribution guidance.
+   - *Automated status:* Filter behavior and project destinations verified. Maintainer activity and readiness should continue to be checked against each repository.
+
+No representative human usability or terminology sessions are recorded in this repository yet. The roadmap therefore keeps those two milestones open.
+
+### 16.2 Implemented interaction and localization improvements
+
+1. **Accessibility Locale Attributes:** Enhanced `SiteShell.tsx` with dynamic `lang={locale}` container attributes to support multi-lingual screen-reader speech engines.
+2. **Path-Aware Language Switcher:** Upgraded `Navbar.tsx` to preserve the user's active sub-page across language transitions (e.g., `/programs` ↔ `/id/programs`).
+3. **Bilingual Core Page Parity:** Shipped dedicated Indonesian routes across all core destinations (`/id/about`, `/id/programs`, `/id/learn`, `/id/impact`, `/id/partners`, `/id/roadmap`, `/id/blog`, `/id/contact`, `/id/open-source`) with full metadata, sitemap coverage, and canonical hreflang alternates.
+4. **End-to-End Persona Journey Verification:** Integrated Playwright and Node test runner assertions covering all 4 persona paths and both languages in continuous integration.

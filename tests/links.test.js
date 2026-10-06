@@ -6,6 +6,7 @@ const openSourcePage = await readFile(new URL('../app/open-source/page.tsx', imp
 const programsPage = await readFile(new URL('../app/programs/page.tsx', import.meta.url), 'utf8')
 const homePage = await readFile(new URL('../app/page.tsx', import.meta.url), 'utf8')
 const navbar = await readFile(new URL('../components/Navbar.tsx', import.meta.url), 'utf8')
+const siteShell = await readFile(new URL('../components/SiteShell.tsx', import.meta.url), 'utf8')
 const developmentProgress = JSON.parse(
   await readFile(new URL('../data/development-progress.json', import.meta.url), 'utf8')
 )
@@ -77,6 +78,57 @@ test('internationalization and discovery foundations are published', () => {
   assert.ok(sitemap.includes("'/about'"))
   assert.ok(sitemap.includes("'/partners'"))
   assert.ok(sitemap.includes("'/roadmap'"))
+  assert.ok(siteShell.includes('lang={locale}'))
+})
+
+test('bilingual route parity exists across all core pages', async () => {
+  const coreRoutes = [
+    'about',
+    'programs',
+    'learn',
+    'impact',
+    'partners',
+    'roadmap',
+    'blog',
+    'contact',
+    'open-source',
+  ]
+
+  for (const route of coreRoutes) {
+    const idPage = await readFile(new URL(`../app/id/${route}/page.tsx`, import.meta.url), 'utf8')
+    assert.ok(idPage.length > 0, `Missing content for /id/${route}`)
+    assert.ok(sitemap.includes(`'/id/${route}'`), `Sitemap missing /id/${route}`)
+  }
+
+  for (const route of ['about', 'programs', 'learn', 'impact', 'partners', 'roadmap', 'open-source']) {
+    assert.ok(navbar.includes(`/id/${route}`), `Navbar missing /id/${route}`)
+  }
+})
+
+test('core persona entry points are present across both languages', async () => {
+  // 1. Learner: a clear starting path exists without mandatory login
+  assert.ok(homePage.includes('https://belajar.programinglive.com'))
+  assert.ok(homePage.includes('Begin without creating an account'))
+  assert.ok(indonesianHome.includes('https://belajar.programinglive.com'))
+  assert.ok(indonesianHome.includes('tanpa membuat akun'))
+
+  // 2. Institution: understands program model, requirements, and partnership inquiry
+  assert.ok(programsPage.includes('Technology requirements'))
+  assert.ok(programsPage.includes('Discuss a partnership'))
+  const idProgramsPage = await readFile(new URL('../app/id/programs/page.tsx', import.meta.url), 'utf8')
+  assert.ok(idProgramsPage.includes('Diskusikan kemitraan'))
+
+  // 3. Funder: understands stage, measurement framework, and honest status
+  const impactPage = await readFile(new URL('../app/impact/page.tsx', import.meta.url), 'utf8')
+  assert.ok(impactPage.includes('Current Stage: Early Pilot'))
+  assert.ok(impactPage.includes('Baseline in development'))
+  const idImpactPage = await readFile(new URL('../app/id/impact/page.tsx', import.meta.url), 'utf8')
+  assert.ok(idImpactPage.includes('Tahap Saat Ini: Pilot Awal'))
+
+  // 4. Developer: finds appropriate contribution path and canonical repositories
+  const idOpenSource = await readFile(new URL('../app/id/open-source/page.tsx', import.meta.url), 'utf8')
+  assert.ok(openSourcePage.includes('https://github.com/programinglive/dev-workflow-mcp-server'))
+  assert.ok(idOpenSource.includes('https://github.com/programinglive/dev-workflow-mcp-server'))
 })
 
 test('production pilot covers learner and institutional journeys and reports to Discord', () => {
@@ -88,6 +140,75 @@ test('production pilot covers learner and institutional journeys and reports to 
   assert.ok(siteBrowserPilot.includes('/open-source'))
   assert.ok(siteBrowserPilot.includes('/roadmap'))
   assert.ok(siteBrowserPilot.includes('/id'))
+})
+
+test('open-source contribution pathway provides beginner projects, tested setup, and track index', async () => {
+  const idOpenSource = await readFile(new URL('../app/id/open-source/page.tsx', import.meta.url), 'utf8')
+
+  // 1. Beginner-friendly project exists
+  assert.ok(openSourcePage.includes("difficulty: 'Beginner'"))
+  assert.ok(idOpenSource.includes("difficulty: 'Beginner'"))
+  assert.ok(openSourcePage.includes('ProgramingLive Portal & Docs'))
+  assert.ok(idOpenSource.includes('ProgramingLive Portal & Dokumentasi'))
+
+  // 2. Tested local setup instructions and contribution guides are present
+  assert.ok(openSourcePage.includes('Tested local setup'))
+  assert.ok(openSourcePage.includes('CONTRIBUTING.md'))
+  assert.ok(idOpenSource.includes('Panduan Penyiapan Lokal Teruji'))
+  assert.ok(idOpenSource.includes('CONTRIBUTING.md'))
+
+  // 3. Track-to-project index connects learning stages to practical tasks
+  assert.ok(openSourcePage.includes('id="track-index"'))
+  assert.ok(openSourcePage.includes('trackProjectIndex'))
+  assert.ok(idOpenSource.includes('id="track-index"'))
+  assert.ok(idOpenSource.includes('trackProjectIndexId'))
+  assert.ok(siteContent.includes('trackProjectIndex'))
+})
+
+test('creator studio and blog operationalize editorial cadence and consent-first collaboration', async () => {
+  const blogPage = await readFile(new URL('../app/blog/page.tsx', import.meta.url), 'utf8')
+  const idBlogPage = await readFile(new URL('../app/id/blog/page.tsx', import.meta.url), 'utf8')
+
+  // 1. Editorial cadence defined
+  assert.ok(blogPage.includes('editorialCadence'))
+  assert.ok(idBlogPage.includes('editorialCadenceId'))
+  assert.ok(siteContent.includes('editorialCadence'))
+  assert.ok(siteContent.includes('editorialCadenceId'))
+
+  // 2. Real curriculum articles linked to learning tracks
+  assert.ok(blogPage.includes('editorialArticles'))
+  assert.ok(idBlogPage.includes('editorialArticlesId'))
+  assert.ok(siteContent.includes('first-learning-track-retrospective'))
+  assert.ok(siteContent.includes('https://belajar.programinglive.com/learn/first-web-page'))
+
+  // 3. Community feedback & consent-first showcase guidelines
+  assert.ok(blogPage.includes('collaborationGuidelines'))
+  assert.ok(idBlogPage.includes('collaborationGuidelinesId'))
+  assert.ok(blogPage.includes('https://github.com/programinglive/belajar/discussions'))
+  assert.ok(idBlogPage.includes('https://github.com/programinglive/belajar/discussions'))
+  assert.ok(siteContent.includes('Consent-First Portfolio Showcase') || siteContent.includes('opt-in consent'))
+})
+
+test('mission measurement framework establishes monthly outcome review, cta governance, and data separation', async () => {
+  const impactPage = await readFile(new URL('../app/impact/page.tsx', import.meta.url), 'utf8')
+  const idImpactPage = await readFile(new URL('../app/id/impact/page.tsx', import.meta.url), 'utf8')
+  const missionMeasurementDoc = await readFile(new URL('../docs/MISSION_MEASUREMENT.md', import.meta.url), 'utf8')
+
+  // 1. Monthly review cycle & 4 core indicators
+  assert.ok(impactPage.includes('monthlyOutcomeReviews'))
+  assert.ok(idImpactPage.includes('monthlyOutcomeReviewsId'))
+  assert.ok(siteContent.includes('monthlyOutcomeReviews'))
+  assert.ok(missionMeasurementDoc.includes('first Monday of each month'))
+
+  // 2. Curriculum improvement & CTA integrity governance
+  assert.ok(impactPage.includes('governancePolicies'))
+  assert.ok(idImpactPage.includes('governancePoliciesId'))
+  assert.ok(siteContent.includes('ctaVerification'))
+  assert.ok(missionMeasurementDoc.includes('Zero-Tolerance for Broken CTAs'))
+
+  // 3. Strict personal assistant & learner data segregation
+  assert.ok(siteContent.includes('dataSeparation'))
+  assert.ok(missionMeasurementDoc.includes('Strict Data Segregation'))
 })
 
 test('website and Discord bulletin share the same progress source', () => {

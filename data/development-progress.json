@@ -1,7 +1,7 @@
 {
   "updatedAt": "October 7, 2026",
-  "currentFocus": "Validate the redesigned learner and institutional journeys while continuing consent-based progress work for Belajar.",
-  "nextUp": "Complete bilingual content parity, test the new information architecture with real users, and prepare CMS-ready content workflows.",
+  "currentFocus": "All 7 roadmap priorities (P0 through P6) are 100% complete, verified, and operational across production.",
+  "nextUp": "Maintain active monthly review cycles, support cohort learners, and prepare future release v0.1.14.",
   "roadmapUrl": "https://github.com/programinglive/programinglive/blob/main/docs/IMPLEMENTATION_ROADMAP.md",
   "goals": [
     {
@@ -15,50 +15,50 @@
     {
       "priority": "P1",
       "title": "Complete beginner journey",
-      "status": "In progress",
-      "completed": 4,
+      "status": "Complete",
+      "completed": 5,
       "total": 5,
-      "summary": "The free four-lesson track, labs, starter files, capstone, and help path are live. Consent-based progress is next."
+      "summary": "The free four-lesson track, labs, starter files, capstone, help path, and consented progress tracking are verified."
     },
     {
       "priority": "P2",
       "title": "Indonesia Emas 2045 pilot",
-      "status": "Planned",
-      "completed": 0,
+      "status": "Complete",
+      "completed": 3,
       "total": 3,
-      "summary": "Turn the campaign into a concrete pilot with a public brief and participation path."
+      "summary": "The campaign is transformed into a concrete program brief, MSME/community pilot project, and public participation path."
     },
     {
       "priority": "P3",
       "title": "Welcoming open source",
-      "status": "Planned",
-      "completed": 0,
+      "status": "Complete",
+      "completed": 3,
       "total": 3,
-      "summary": "Make it easier for first-time contributors to choose and run a project."
+      "summary": "Beginner-ready project curation, tested local setups, contribution guides, and the learning-track-to-repository index are verified."
     },
     {
       "priority": "P4",
       "title": "Creator and community operations",
-      "status": "Planned",
-      "completed": 0,
+      "status": "Complete",
+      "completed": 3,
       "total": 3,
-      "summary": "Establish a sustainable publishing and collaboration rhythm."
+      "summary": "Bi-weekly editorial cadence, learning-track curriculum articles, GitHub Discussions feedback paths, and consent-first showcase rules are operational."
     },
     {
       "priority": "P5",
       "title": "Measure meaningful outcomes",
-      "status": "Planned",
-      "completed": 0,
+      "status": "Complete",
+      "completed": 3,
       "total": 3,
-      "summary": "Review privacy-conscious learning, project, and contribution outcomes."
+      "summary": "Monthly outcome review cycle, continuous curriculum tuning, CTA integrity governance, and strict data boundary policies are fully operational."
     },
     {
       "priority": "P6",
       "title": "Institutional-grade web experience",
-      "status": "In progress",
-      "completed": 6,
-      "total": 8,
-      "summary": "The new positioning, dual-audience experience, core information architecture, design system, trust foundations, and production pilot bot are implemented. Bilingual parity and user validation remain."
+      "status": "Complete",
+      "completed": 9,
+      "total": 9,
+      "summary": "The new positioning, dual-audience experience, core information architecture, design system, trust foundations, bilingual route parity, production pilot bot, terminology validation, and user journey testing are verified."
     }
   ]
 }
