@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/programinglive/programinglive/compare/v0.1.11...v0.1.12) (2026-10-06)
+
+
+### 📝 Documentation
+
+* advance Belajar roadmap progress ([3b23db2](https://github.com/programinglive/programinglive/commit/3b23db2891e2f0717e8a6c5ff84bcabe78c98dae))
+* update release notes for v0.1.11 ([db941ad](https://github.com/programinglive/programinglive/commit/db941ad5b9acf01a951f1f399a057c33dbb8d2c3))
+
 ### [0.1.11](https://github.com/programinglive/programinglive/compare/v0.1.10...v0.1.11) (2026-10-06)
 
 
