@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/programinglive/programinglive/compare/v0.1.8...v0.1.9) (2026-10-06)
+
+
+### 🧹 Chores
+
+* cleanup after release ([f6cf3fe](https://github.com/programinglive/programinglive/commit/f6cf3feef8e8d659134ad5e2e8629745d783482a))
+
+
+### ✨ Features
+
+* add Netlify release workflow ([5383a86](https://github.com/programinglive/programinglive/commit/5383a86daa15fb95d26760459bb72d7b009455f4))
+
 ### [0.1.8](https://github.com/programinglive/programinglive/compare/v0.1.7...v0.1.8) (2026-01-15)
 
 
