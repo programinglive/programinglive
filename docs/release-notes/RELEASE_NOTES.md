@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.1.11 | 2026-10-06 | clarify Belajar release flow (669168e) |
 | 0.1.10 | 2026-10-06 | update release notes for v0.1.9 (09e61b1) |
 | 0.1.9 | 2026-10-06 | cleanup after release (f6cf3fe) |
 | 0.1.8 | 2026-01-15 | add release notes for v0.1.7 (296c6a6) |
@@ -23,6 +24,16 @@
 
 
 
+
+
+## 0.1.11 – 📝 Documentation
+
+Released on **2026-10-06**.
+
+- clarify Belajar release flow (669168e)
+- record Belajar deployment (f87a212)
+- update release notes for v0.1.10 (56ea02e)
+- publish development bulletin (25566d5)
 
 ## 0.1.10 – 📝 Documentation
 
