@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.1.12 | 2026-10-06 | advance Belajar roadmap progress (3b23db2) |
 | 0.1.11 | 2026-10-06 | clarify Belajar release flow (669168e) |
 | 0.1.10 | 2026-10-06 | update release notes for v0.1.9 (09e61b1) |
 | 0.1.9 | 2026-10-06 | cleanup after release (f6cf3fe) |
@@ -25,6 +26,14 @@
 
 
 
+
+
+## 0.1.12 – 📝 Documentation
+
+Released on **2026-10-06**.
+
+- advance Belajar roadmap progress (3b23db2)
+- update release notes for v0.1.11 (db941ad)
 
 ## 0.1.11 – 📝 Documentation
 
