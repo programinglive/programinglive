@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "test": "node --test",
     "prepare": "husky",
@@ -18,15 +18,16 @@
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
-    "@netlify/plugin-nextjs": "^5.8.0",
+    "@netlify/plugin-nextjs": "^5.16.2",
     "@programinglive/commiter": "^1.2.17",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/react": "^18.2.70",
     "@types/react-dom": "^18.2.22",
     "autoprefixer": "^10.4.20",
     "husky": "^9.1.7",
     "postcss": "^8.4.49",
     "standard-version": "^9.5.0",
-    "tailwindcss": "^3.4.14",
+    "tailwindcss": "^4.3.3",
     "typescript": "~5.9.3",
     "vite": "^7.2.2"
   },
@@ -96,7 +97,7 @@
     "@rollup/rollup-linux-x64-musl": "npm:@rollup/rollup-win32-x64-msvc"
   },
   "dependencies": {
-    "next": "^14.2.5",
+    "next": "^16.3.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
