@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.1.9 | 2026-10-06 | cleanup after release (f6cf3fe) |
 | 0.1.8 | 2026-01-15 | add release notes for v0.1.7 (296c6a6) |
 | 0.1.7 | 2025-12-29 | configure npm to omit optional deps and document audit limitations on Windows (2151671) |
 | 0.1.6 | 2025-12-29 | clean up release notes formatting and update netlify-cli to 23.12.2 (306b6dd) |
@@ -19,6 +20,14 @@
 
 
 
+
+
+## 0.1.9 – 🧹 Chores
+
+Released on **2026-10-06**.
+
+- cleanup after release (f6cf3fe)
+- add Netlify release workflow (5383a86)
 
 ## 0.1.8 – 📝 Documentation
 
