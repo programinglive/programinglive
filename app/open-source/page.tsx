@@ -49,7 +49,7 @@ const projects = [
     ],
     links: [
       { label: 'View Website', href: 'https://sentryresolve.programinglive.com/' },
-      { label: 'GitHub Repo', href: 'https://github.com/programinglive/sentryresolve' },
+      { label: 'GitHub Repo', href: 'https://github.com/programinglive/sentry-resolve' },
       { label: 'View on Packagist', href: 'https://packagist.org/packages/programinglive/sentry-resolve' },
     ],
   },

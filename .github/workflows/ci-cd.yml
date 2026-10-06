@@ -1,0 +1,64 @@
+name: ProgramingLive CI/CD
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Test and build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Run regression tests
+        run: npm test
+
+      - name: Build Next.js site
+        run: npm run build
+
+  deploy-production:
+    name: Deploy release to Netlify production
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    needs: verify
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://programinglive.com
+    concurrency:
+      group: programinglive-netlify-production
+      cancel-in-progress: false
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Deploy tagged release
+        run: npx --yes netlify-cli@27.10.1 deploy --prod --build --site "$NETLIFY_SITE_ID" --message "Release ${GITHUB_REF_NAME}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: 7347be3b-6791-412a-911b-adea94a442ea

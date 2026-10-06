@@ -1,6 +1,6 @@
 # ProgramingLive
 
-ProgramingLive is a modern, light-themed web experience that showcases how the community grows Indonesian developers through structured programs, collaborative sprints, and partner-backed support. The project is built with Vite, TypeScript, and Tailwind CSS, and ships with polished marketing pages plus legal documentation.
+ProgramingLive is a modern, light-themed website that presents learning programs, open-source projects, and resources for Indonesian developers. The project uses the Next.js App Router, React, TypeScript, and Tailwind CSS, with legal documentation and shared site components.
 
 ## Features
 
@@ -13,24 +13,22 @@ ProgramingLive is a modern, light-themed web experience that showcases how the c
 ## Getting Started
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-- The site runs at [http://localhost:5173](http://localhost:5173) during development.
+- The site runs at [http://localhost:3000](http://localhost:3000) during development.
+- Run the link regression tests with `npm test`.
 - Build for production with `npm run build`.
+- Run the production build locally with `npm run start`.
 - Generate a release with semantic versioning using `npm run release[:major|:minor|:patch]`.
 
 ## Project Structure
 
 ```
-├── public/              # Static assets (favicons, sponsor logos, og images)
-├── src/
-│   ├── components/      # Shared navbar and footer components
-│   ├── main.ts          # Landing page entry
-│   ├── privacy.ts       # Privacy policy page
-│   ├── guidelines.ts    # Community guidelines page
-│   └── terms.ts         # Terms of service page
+├── app/                 # Next.js routes and global styles
+├── components/          # Shared navbar and footer components
+├── public/              # Static assets and sponsor logos
 ├── docs/
 │   └── release-notes/   # Cumulative release notes maintained by the release script
 ├── scripts/             # Release automation helpers
@@ -41,7 +39,7 @@ npm run dev
 
 Releases are automated via `@programinglive/commiter` and `standard-version`. Running `npm run release:patch` (or `:minor`, `:major`) will:
 
-1. Run the test suite placeholder (`npm test`).
+1. Run the link regression suite (`npm test`).
 2. Bump versions in `package.json`/`package-lock.json`.
 3. Update `CHANGELOG.md` and `docs/release-notes/RELEASE_NOTES.md`.
 4. Commit and tag the release.
@@ -51,6 +49,8 @@ After the script finishes, push with tags:
 ```bash
 git push --follow-tags origin main
 ```
+
+GitHub Actions verifies pull requests and `main` updates. A pushed version tag deploys to Netlify production after the checks pass. Configure the `NETLIFY_AUTH_TOKEN` repository secret before creating a production release; see [deployment instructions](./docs/DEPLOYMENT.md).
 
 ## Contributing
 

@@ -13,8 +13,7 @@ export default function ProgramsPage() {
             Signature Programs
           </h1>
           <p className="max-w-2xl text-sm text-slate-600">
-            Our structured experiences make it effortless to level up and contributefrom guided learning paths to
-            collaborative sprints and open projects.
+            Explore active projects and program concepts. Some learning tracks and contribution paths are still being prepared.
           </p>
           <div className="flex flex-wrap gap-3 pt-2 text-sm text-slate-600">
             <span className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white">
@@ -42,7 +41,7 @@ export default function ProgramsPage() {
               >
                 <p className="text-xs uppercase tracking-widest text-slate-500">Belajar Program</p>
                 <p className="mt-2 text-sm text-slate-700">
-                  A guided curriculum that blends foundational concepts with practical labs and community check-ins.
+                  A beginner curriculum is in development. Preview the first lesson; the full course is not available yet.
                 </p>
               </Link>
               <Link
@@ -51,8 +50,7 @@ export default function ProgramsPage() {
               >
                 <p className="text-xs uppercase tracking-widest text-slate-500">Indonesia Emas 2045</p>
                 <p className="mt-2 text-sm text-slate-700">
-                  A nationwide initiative preparing talent for the country&apos;s golden digital era with mission-driven
-                  projects.
+                  A long-term initiative concept for Indonesia&apos;s 2045 vision. Pilot activities and participation details are not available yet.
                 </p>
               </Link>
               <Link
@@ -61,7 +59,7 @@ export default function ProgramsPage() {
               >
                 <p className="text-xs uppercase tracking-widest text-slate-500">Open Source Project</p>
                 <p className="mt-2 text-sm text-slate-700">
-                  Collaborative builds tackling real business and societal challenges with maintainers and mentors.
+                  Explore current open-source projects. Beginner contribution paths and project briefs are still being prepared.
                 </p>
               </Link>
             </div>

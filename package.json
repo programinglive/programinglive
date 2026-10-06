@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "echo \"No tests specified\"",
+    "test": "node --test",
     "prepare": "husky",
     "release": "node scripts/release.cjs",
     "release:major": "node scripts/release.cjs major",
