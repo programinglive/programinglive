@@ -20,9 +20,9 @@ Exit criteria: contributors can identify the production source, and prominent li
 Audit baseline: Belajar has its landing page, account sign-in/registration, and one static lesson preview; it has no full course catalog, enrollment, progress tracking, or social-feed routes/models. Belajar's public copy and the Programs cards now distinguish the preview from unavailable full-course/community features.
 
 - [x] Define one audience and one measurable beginner outcome for the first learning track in `belajar/docs/first-learning-track.md` (draft; not published as an app course).
-- [ ] Publish a sequenced curriculum with prerequisites, short lessons, practical labs, and a capstone project.
-- [ ] Make each lab's starter code, expected result, and self-check steps available without a paywall.
-- [ ] Provide a clear path for questions or mentorship without collecting unnecessary personal data.
+- [x] Publish a sequenced curriculum with prerequisites, short lessons, practical labs, and a capstone project.
+- [x] Make each lab's starter code, expected result, and self-check steps available without a paywall.
+- [x] Provide a clear path for questions or mentorship without collecting unnecessary personal data.
 - [ ] Track only useful, consented progress signals (for example, lesson completion and capstone submission).
 
 Exit criteria: a new learner can start from the landing page, finish the first module, build and verify a small project, and understand what to do next.

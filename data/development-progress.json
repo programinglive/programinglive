@@ -1,7 +1,7 @@
 {
   "updatedAt": "October 7, 2026",
-  "currentFocus": "Publish Belajar's first complete beginner track with sequenced lessons, practical labs, starter code, and a capstone.",
-  "nextUp": "Make each lab freely usable with an expected result and a self-check before adding progress tracking.",
+  "currentFocus": "Add minimal, consent-based progress tracking for Belajar's first learning track without requiring it to access the lessons.",
+  "nextUp": "Run a small beginner pilot, review completion signals, and improve the track from real learner feedback.",
   "roadmapUrl": "https://github.com/programinglive/programinglive/blob/main/docs/IMPLEMENTATION_ROADMAP.md",
   "goals": [
     {
@@ -16,9 +16,9 @@
       "priority": "P1",
       "title": "Complete beginner journey",
       "status": "In progress",
-      "completed": 1,
+      "completed": 4,
       "total": 5,
-      "summary": "The first learning outcome is defined. Lessons, labs, and the capstone come next."
+      "summary": "The free four-lesson track, labs, starter files, capstone, and help path are live. Consent-based progress is next."
     },
     {
       "priority": "P2",
