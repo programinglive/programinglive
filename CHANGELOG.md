@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/programinglive/programinglive/compare/v0.1.12...v0.1.13) (2026-10-06)
+
+
+### 📝 Documentation
+
+* update release notes for v0.1.12 ([6685c83](https://github.com/programinglive/programinglive/commit/6685c83acf8d75c8079791b29c8d3bf83b8337ab))
+
+
+### ✨ Features
+
+* redesign platform for learners and institutions ([e8c3593](https://github.com/programinglive/programinglive/commit/e8c3593aed85ffebfc879aa2621c4fbb8ec79c44))
+
 ### [0.1.12](https://github.com/programinglive/programinglive/compare/v0.1.11...v0.1.12) (2026-10-06)
 
 
