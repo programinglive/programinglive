@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/programinglive/programinglive/compare/v0.1.10...v0.1.11) (2026-10-06)
+
+
+### 📝 Documentation
+
+* clarify Belajar release flow ([669168e](https://github.com/programinglive/programinglive/commit/669168ee8fa7c571cdfe107017333ece42087145))
+* record Belajar deployment ([f87a212](https://github.com/programinglive/programinglive/commit/f87a2129928abddee1d5c67db2d6660fdbd2fee2))
+* update release notes for v0.1.10 ([56ea02e](https://github.com/programinglive/programinglive/commit/56ea02e9b12d55aed806e0eb75d121e1e371b2c9))
+
+
+### ✨ Features
+
+* publish development bulletin ([25566d5](https://github.com/programinglive/programinglive/commit/25566d5287ccadffdc316f7fb483558c2b988f53))
+
 ### [0.1.10](https://github.com/programinglive/programinglive/compare/v0.1.9...v0.1.10) (2026-10-06)
 
 
