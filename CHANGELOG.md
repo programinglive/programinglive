@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/programinglive/programinglive/compare/v0.1.13...v0.1.14) (2026-10-07)
+
+
+### ✨ Features
+
+* complete platform roadmap, bilingual parity, and governance milestones ([61fb7e6](https://github.com/programinglive/programinglive/commit/61fb7e6b5c9259727bd8dd141546ce3483b83df0))
+
 ### [0.1.13](https://github.com/programinglive/programinglive/compare/v0.1.12...v0.1.13) (2026-10-06)
 
 
