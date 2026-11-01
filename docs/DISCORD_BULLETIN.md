@@ -13,6 +13,25 @@ Until the secret is configured, the workflow exits successfully with a notice an
 
 Treat the webhook URL as a secret. Never commit it, paste it into an issue, or include it in screenshots.
 
+## The same webhook carries the production pilot report
+
+`site-production-pilot.yml` posts its result to this channel with the same
+`DISCORD_BULLETIN_WEBHOOK_URL`, under the display name `ProgramingLive Pilot Tester`.
+
+That report is a **notification, not a gate**. On 1 November 2026 the webhook had
+been deleted (HTTP 404) while both journeys still passed, so the pilot failed every
+day for a week and buried the signal it exists to send. Now:
+
+- the `Report result to Discord` step is `continue-on-error`, so a broken webhook
+  cannot turn a healthy pilot red;
+- `scripts/post-site-pilot-result.cjs` prints a `::warning::` annotation naming the
+  secret to check, so a dead webhook stays visible in the run;
+- only `Enforce pilot result` decides pass or fail.
+
+A webhook that responds 404 has been deleted. Create a new one in
+**Edit Channel → Integrations → Webhooks** and replace the secret; deletions are
+not recoverable.
+
 ## Publishing an update
 
 Update `data/development-progress.json` in the same change that advances the roadmap. The homepage is rebuilt from that data, and the Discord workflow posts the same status after the change reaches `main`.

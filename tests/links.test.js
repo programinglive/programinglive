@@ -135,6 +135,15 @@ test('production pilot covers learner and institutional journeys and reports to 
   assert.ok(sitePilotWorkflow.includes('site-api-smoke.cjs'))
   assert.ok(sitePilotWorkflow.includes('site-browser-smoke.cjs'))
   assert.ok(sitePilotWorkflow.includes('post-site-pilot-result.cjs'))
+
+  // Laporan Discord hanya pemberitahuan. Webhook yang mati pernah membuat pilot
+  // yang sehat tampil merah setiap hari, jadi step ini wajib continue-on-error.
+  const reportStep = sitePilotWorkflow.slice(sitePilotWorkflow.indexOf('Report result to Discord'))
+  assert.ok(
+    reportStep.slice(0, 400).includes('continue-on-error: true'),
+    'step laporan Discord harus continue-on-error agar webhook mati tidak menggagalkan pilot'
+  )
+
   assert.ok(siteBrowserPilot.includes('Start Learning'))
   assert.ok(siteBrowserPilot.includes('Partnership interest'))
   assert.ok(siteBrowserPilot.includes('/open-source'))

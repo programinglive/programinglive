@@ -10,4 +10,10 @@ async function main() {
   const response = await fetch(`${webhookUrl}?wait=true`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ username: 'ProgramingLive Pilot Tester', allowed_mentions: { parse: [] }, embeds: [{ title: `${success ? '✅' : '❌'} ProgramingLive production pilot ${success ? 'passed' : 'failed'}`, url: runUrl, description: success ? 'A synthetic learner and institutional visitor completed the production journeys.' : 'At least one production journey failed. Open the workflow for details.', color: success ? 0x16a34a : 0xdc2626, fields: [{ name: 'API / HTTP', value: apiResult, inline: true }, { name: 'Browser', value: browserResult, inline: true }, { name: 'Release', value: process.env.GITHUB_REF_NAME || 'production', inline: true }], timestamp: new Date().toISOString() }] }) })
   if (!response.ok) throw new Error(`Discord report failed with HTTP ${response.status}`)
 }
-main().catch((error) => { console.error(error.message); process.exitCode = 1 })
+main().catch((error) => {
+  console.error(error.message)
+  // Anotasi supaya webhook yang mati tetap terlihat di halaman run tanpa
+  // membuat pilot yang lulus tampil gagal.
+  console.log(`::warning::Laporan Discord gagal (${error.message}). Hasil pilot tidak terpengaruh; periksa secret DISCORD_BULLETIN_WEBHOOK_URL.`)
+  process.exitCode = 1
+})

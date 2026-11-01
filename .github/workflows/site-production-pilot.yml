@@ -43,8 +43,12 @@ jobs:
         run: node scripts/site-browser-smoke.cjs
         env:
           SITE_PILOT_BASE_URL: https://programinglive.com
+      # Laporan Discord adalah pemberitahuan, bukan syarat lulus. Webhook yang
+      # sudah dihapus (404) pernah membuat pilot yang sebenarnya sehat tampil
+      # merah setiap hari; kegagalan laporan sekarang jadi warning.
       - name: Report result to Discord
         if: always()
+        continue-on-error: true
         run: node scripts/post-site-pilot-result.cjs
         env:
           DISCORD_BULLETIN_WEBHOOK_URL: ${{ secrets.DISCORD_BULLETIN_WEBHOOK_URL }}
