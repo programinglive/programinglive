@@ -29,17 +29,22 @@ jobs:
         id: discord
         shell: bash
         env:
-          DISCORD_BULLETIN_WEBHOOK_URL: ${{ secrets.DISCORD_BULLETIN_WEBHOOK_URL }}
+          BULLETIN_RELAY_TOKEN: ${{ secrets.NOTIFY_RELAY_TOKEN }}
         run: |
-          if [[ -n "$DISCORD_BULLETIN_WEBHOOK_URL" ]]; then
+          # The relay is the normal path; the channel webhook is only a fallback
+          # for a local run. Either one counts as configured.
+          if [[ -n "${BULLETIN_RELAY_TOKEN:-}" ]]; then
             echo "configured=true" >> "$GITHUB_OUTPUT"
           else
             echo "configured=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Discord bulletin skipped because DISCORD_BULLETIN_WEBHOOK_URL is not configured."
+            echo "::notice::Bulletin skipped: NOTIFY_RELAY_TOKEN is not configured."
           fi
 
       - name: Publish bulletin
         if: steps.discord.outputs.configured == 'true'
         run: node scripts/post-development-bulletin.cjs
         env:
-          DISCORD_BULLETIN_WEBHOOK_URL: ${{ secrets.DISCORD_BULLETIN_WEBHOOK_URL }}
+          # DOCS/DISCORD-BULLETIN.md: the relay keeps the webhook URL on the
+          # notification server; the workflow only carries a token.
+          BULLETIN_WEBHOOK_URL: https://erp.beautyworld.id/api/discord
+          BULLETIN_RELAY_TOKEN: ${{ secrets.NOTIFY_RELAY_TOKEN }}

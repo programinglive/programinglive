@@ -1,0 +1,90 @@
+name: Deploy to production and announce it
+
+# Joins the existing CI/CD workflow rather than duplicating it:
+#   * the deploy itself reuses the `deploy-prod` job of ci-cd.yml, which owns
+#     the docker build, the Container Registry push and the droplet restart;
+#   * this workflow only *waits* for that run to finish and then tells the
+#     notification droplet what happened, so Discord knows before you open
+#     your laptop.
+#
+# Why the notifier droplet: the DigitalOcean droplet already has an SSE
+# tunnel that reaches the notification server, so it is the one place that can
+# post without exposing a webhook URL or a public endpoint. No Discord webhook
+# URL is stored in this repository or in an Actions secret.
+
+on:
+  workflow_run:
+    workflows: ['ProgramingLive CI/CD']
+    types: [requested]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  announce:
+    name: Announce deploy result
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.head_branch == 'main'
+    steps:
+      - name: Wait for the deploy job
+        id: wait
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = context.payload.workflow_run
+            const owner = context.repo.owner
+            const repo = context.repo.repo
+            if (!run) {
+              core.notice('Manual run: nothing to wait for.')
+              return
+            }
+            // The deploy job is `deploy-prod` in ci-cd.yml. Poll until it ends.
+            const deadline = Date.now() + 40 * 60 * 1000
+            let conclusion = 'timed_out'
+            while (Date.now() < deadline) {
+              const jobs = await github.rest.actions.listJobsForWorkflowRun({
+                owner, repo, run_id: run.id, per_page: 100,
+              })
+              const deploy = jobs.data.jobs.find((j) => j.name.includes('deploy-prod'))
+              if (deploy && deploy.status === 'completed') {
+                conclusion = deploy.conclusion
+                break
+              }
+              await new Promise((r) => setTimeout(r, 30000))
+            }
+            core.setOutput('conclusion', conclusion)
+            core.setOutput('head_sha', run.head_sha.slice(0, 7))
+
+      - name: Report to Discord
+        if: always()
+        env:
+          NOTIFY_HOST: ${{ vars.NOTIFY_DROPLET_HOST }}
+          NOTIFY_PATH: ${{ vars.NOTIFY_DROPLET_PATH }}
+          NOTIFY_SECRET: ${{ secrets.NOTIFY_DROPLET_SECRET }}
+          CONCLUSION: ${{ steps.wait.outputs.conclusion }}
+          HEAD: ${{ steps.wait.outputs.head_sha }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${NOTIFY_HOST:-}" || -z "${NOTIFY_PATH:-}" ]]; then
+            echo "::notice::Notification droplet is not configured (NOTIFY_DROPLET_HOST / NOTIFY_DROPLET_PATH)."
+            exit 0
+          fi
+          if [[ "${CONCLUSION}" == "success" ]]; then
+            COLOR=ok
+            TITLE="🟢 ${GITHUB_REPOSITORY} dipush ke produksi"
+          else
+            COLOR=fail
+            TITLE="🔴 ${GITHUB_REPOSITORY} deploy gagal (${CONCLUSION})"
+          fi
+          DESCRIPTION="Commit \`${HEAD}\` · branch \`${GITHUB_REF_NAME:-main}\` · ${CONCLUSION}
+          ${RUN_URL:-}"
+          PAYLOAD=$(jq -nc --arg t "$TITLE" --arg d "$DESCRIPTION" --arg c "$COLOR" \
+            '{kind:"deploy", title:$t, description:$d, color:$c}')
+          curl -fsS --max-time 30 -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-Notify-Token: ${NOTIFY_SECRET}" \
+            --data "$PAYLOAD" \
+            "https://${NOTIFY_HOST}${NOTIFY_PATH}" > /dev/null
