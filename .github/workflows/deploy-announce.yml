@@ -37,8 +37,11 @@ jobs:
               core.notice('Manual run: nothing to wait for.')
               return
             }
-            // The deploy job is `deploy-prod` in ci-cd.yml. Poll until it ends.
-            const deadline = Date.now() + 40 * 60 * 1000
+            // ci-cd.yml names the job `deploy-production`. Match that string, not
+            // a guess: a wrong name meant this step polled for 40 minutes and
+            // always reported `timed_out`.
+            const DEPLOY_JOB = 'deploy-production'
+            const deadline = Date.now() + 45 * 60 * 1000
             let conclusion = 'timed_out'
             while (Date.now() < deadline) {
               const jobs = await github.rest.actions.listJobsForWorkflowRun({
@@ -47,7 +50,7 @@ jobs:
                 run_id: run.id,
                 per_page: 100,
               })
-              const deploy = jobs.data.jobs.find((j) => j.name.includes('deploy-prod'))
+              const deploy = jobs.data.jobs.find((j) => j.name === DEPLOY_JOB || j.name.startsWith(`${DEPLOY_JOB} `))
               if (deploy && deploy.status === 'completed') {
                 conclusion = deploy.conclusion
                 break
@@ -58,8 +61,22 @@ jobs:
             core.setOutput('head_sha', run.head_sha.slice(0, 7))
             core.setOutput('run_url', run.html_url)
 
+      - name: Skip when this run deployed nothing
+        id: gate
+        env:
+          CONCLUSION: ${{ steps.wait.outputs.conclusion }}
+        run: |
+          # Untagged pushes never deploy: ci-cd.yml only deploys on v* tags or a
+          # manual dispatch. Announcing "deploy gagal" for those would be a lie.
+          if [[ "${CONCLUSION}" == "timed_out" ]]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::No deploy job finished; nothing to announce."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Report to the relay
-        if: always()
+        if: always() && steps.gate.outputs.skip != 'true'
         env:
           RELAY_TOKEN: ${{ secrets.NOTIFY_RELAY_TOKEN }}
           CONCLUSION: ${{ steps.wait.outputs.conclusion }}
