@@ -37,10 +37,20 @@ jobs:
               core.notice('Manual run: nothing to wait for.')
               return
             }
-            // ci-cd.yml names the job `deploy-production`. Match that string, not
-            // a guess: a wrong name meant this step polled for 40 minutes and
-            // always reported `timed_out`.
+            // ci-cd.yml names the job `deploy-production`, and only runs it for
+            // `v*` tags or a manual dispatch. Check both before polling: a push
+            // to main without a tag never deploys, so waiting 45 minutes for a
+            // job that will never start is pure noise.
             const DEPLOY_JOB = 'deploy-production'
+            const ref = run.head_branch || ''
+            const deploys = run.event === 'push' ? /^v/.test(ref) : run.event === 'workflow_dispatch'
+            if (!deploys) {
+              core.notice(`Run ${run.id} (${run.event} ${ref}) does not deploy; nothing to announce.`)
+              core.setOutput('conclusion', 'no_deploy')
+              core.setOutput('head_sha', run.head_sha.slice(0, 7))
+              core.setOutput('run_url', run.html_url)
+              return
+            }
             const deadline = Date.now() + 45 * 60 * 1000
             let conclusion = 'timed_out'
             while (Date.now() < deadline) {
@@ -55,7 +65,12 @@ jobs:
                 conclusion = deploy.conclusion
                 break
               }
-              await new Promise((r) => setTimeout(r, 30000))
+              if (!deploy && Date.now() > deadline - 40 * 60 * 1000) {
+                // The whole run finished without ever starting the deploy job.
+                conclusion = 'no_deploy'
+                break
+              }
+              await new Promise((r) => setTimeout(r, 15000))
             }
             core.setOutput('conclusion', conclusion)
             core.setOutput('head_sha', run.head_sha.slice(0, 7))
@@ -67,10 +82,11 @@ jobs:
           CONCLUSION: ${{ steps.wait.outputs.conclusion }}
         run: |
           # Untagged pushes never deploy: ci-cd.yml only deploys on v* tags or a
-          # manual dispatch. Announcing "deploy gagal" for those would be a lie.
-          if [[ "${CONCLUSION}" == "timed_out" ]]; then
+          # manual dispatch. Announcing "deploy gagal" for those would be a lie,
+          # and waiting for a job that never starts only burns runner minutes.
+          if [[ "${CONCLUSION}" == "timed_out" || "${CONCLUSION}" == "no_deploy" ]]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "::notice::No deploy job finished; nothing to announce."
+            echo "::notice::Run does not deploy (${CONCLUSION}); nothing to announce."
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
