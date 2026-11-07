@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises'
 import test from 'node:test'
 
 const openSourcePage = await readFile(new URL('../app/open-source/page.tsx', import.meta.url), 'utf8')
+const idOpenSourcePage = await readFile(new URL('../app/id/open-source/page.tsx', import.meta.url), 'utf8')
 const programsPage = await readFile(new URL('../app/programs/page.tsx', import.meta.url), 'utf8')
 const homePage = await readFile(new URL('../app/page.tsx', import.meta.url), 'utf8')
 const navbar = await readFile(new URL('../components/Navbar.tsx', import.meta.url), 'utf8')
@@ -51,6 +52,11 @@ test('featured Open Source project links use HTTPS', () => {
 
   assert.ok(externalLinks.length > 0, 'Expected to find external project links')
   assert.ok(externalLinks.every((href) => href.startsWith('https://')), 'All external links must use HTTPS')
+})
+
+test('featured Dev Workflow portal links to https://devworkflow.programinglive.com/', () => {
+  assert.ok(openSourcePage.includes('https://devworkflow.programinglive.com/'), 'Missing Dev Workflow portal in open-source page')
+  assert.ok(idOpenSourcePage.includes('https://devworkflow.programinglive.com/'), 'Missing Dev Workflow portal in id open-source page')
 })
 
 test('homepage publishes a roadmap-based development bulletin', () => {

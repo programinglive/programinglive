@@ -347,7 +347,7 @@ export const trackProjectIndex: Array<TrackProjectMapping> = [
     level: 'Level 4: Collaboration & Workflows',
     project: 'Dev Workflow Knowledge Hub',
     repository: 'https://github.com/programinglive/dev-workflow-mcp-server',
-    tasks: 'Model Context Protocol tool descriptions, workflow step assertions, and reproducible test cases.',
+    tasks: 'Model Context Protocol tool schemas, visual architecture flow gates, SQLite state synchronization, and reproducible test cases.',
   },
   {
     level: 'Level 5: Open Source & Code Review',
@@ -374,7 +374,7 @@ export const trackProjectIndexId: Array<TrackProjectMapping> = [
     level: 'Level 4: Kolaborasi & Alur Kerja Tim',
     project: 'Dev Workflow Knowledge Hub',
     repository: 'https://github.com/programinglive/dev-workflow-mcp-server',
-    tasks: 'Dokumentasi skema tools MCP, penambahan kasus uji tes otomatis, dan perbaikan panduan integrasi editor.',
+    tasks: 'Skema tools Model Context Protocol, validasi gerbang diagram alur, sinkronisasi state SQLite, dan penambahan kasus uji tes otomatis.',
   },
   {
     level: 'Level 5: Kontribusi Open Source & Review',
