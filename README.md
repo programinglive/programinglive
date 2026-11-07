@@ -55,6 +55,10 @@ git push --follow-tags origin main
 
 GitHub Actions verifies pull requests and `main` updates. A pushed version tag deploys to Netlify production after the checks pass. Configure the `NETLIFY_AUTH_TOKEN` repository secret before creating a production release; see [deployment instructions](./docs/DEPLOYMENT.md).
 
+## Canonical Infrastructure & Deployments
+
+For the authoritative register of all canonical domains, active Netlify fleet, GCP Load Balancer topology, and locked services (including BOTOL Discord verification), see the [Canonical Domain & Deployment Registry](./docs/PROJECT_DEPLOYMENTS.md).
+
 ## Contributing
 
 Please review [CONTRIBUTING.md](./CONTRIBUTING.md) for local setup and [DEVELOPMENT_STANDARD.md](./DEVELOPMENT_STANDARD.md) for product, verification, release, and bulletin gates. By participating, you agree to uphold the [Code of Conduct](./CODE_OF_CONDUCT.md).

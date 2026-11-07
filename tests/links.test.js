@@ -247,3 +247,16 @@ test('development bulletin milestone counts match the roadmap checklists', () =>
     assert.equal(goal.total, completed + pending, `${goal.priority} total count is out of sync`)
   }
 })
+
+test('project deployment register locks canonical domain topology', async () => {
+  const deploymentRegister = await readFile(new URL('../docs/PROJECT_DEPLOYMENTS.md', import.meta.url), 'utf8')
+  assert.ok(deploymentRegister.includes('bot.programinglive.com'))
+  assert.ok(deploymentRegister.includes('CRITICAL LOCKED'))
+  assert.ok(deploymentRegister.includes('BOTOL'))
+  assert.ok(deploymentRegister.includes('commiter.programinglive.com'))
+  assert.ok(deploymentRegister.includes('sentryresolve.programinglive.com'))
+  assert.ok(deploymentRegister.includes('zettly-editor.programinglive.com'))
+  assert.ok(deploymentRegister.includes('portfolio.programinglive.com'))
+  assert.ok(deploymentRegister.includes('laravelsimplebackup.programinglive.com'))
+  assert.ok(deploymentRegister.includes('comingsoon.programinglive.com'))
+})
