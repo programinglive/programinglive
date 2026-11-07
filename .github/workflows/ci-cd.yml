@@ -19,26 +19,17 @@ permissions:
 
 jobs:
   verify:
+    # Standard checks from programinglive/ci-cd. One caller replaces the
+    # previous hand-written test and build steps.
     name: Test and build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out source
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: npm
-
-      - name: Install locked dependencies
-        run: npm ci
-
-      - name: Run regression tests
-        run: npm test
-
-      - name: Build Next.js site
-        run: npm run build
+    uses: programinglive/ci-cd/.github/workflows/ci-node.yml@v1
+    with:
+      node-version: "20"
+      build-command: npm run build
+      # Ubuntu-hosted until the self-hosted bw-tools runner is installed.
+      # The bw-tools runner needs an organisation registration token; switch
+      # this line to '["self-hosted","linux","bw-tools"]' afterwards.
+      runner: '["ubuntu-latest"]'
 
   deploy-production:
     name: Deploy release to Netlify production
@@ -68,4 +59,4 @@ jobs:
         run: npx --yes netlify-cli@27.10.1 deploy --prod --build --site "$NETLIFY_SITE_ID" --message "Release ${GITHUB_REF_NAME}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: 7347be3b-6791-412a-911b-adea94a442ea
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
