@@ -344,13 +344,7 @@ export const trackProjectIndex: Array<TrackProjectMapping> = [
     tasks: 'CLI usage examples, readme translations, error message clarity, and cross-platform terminal testing.',
   },
   {
-    level: 'Level 4: Collaboration & Workflows',
-    project: 'Dev Workflow Knowledge Hub',
-    repository: 'https://github.com/programinglive/dev-workflow-mcp-server',
-    tasks: 'Model Context Protocol tool schemas, visual architecture flow gates, SQLite state synchronization, and reproducible test cases.',
-  },
-  {
-    level: 'Level 5: Open Source & Code Review',
+    level: 'Level 4: Open Source & Code Review',
     project: 'SentryResolve',
     repository: 'https://github.com/programinglive/sentry-resolve',
     tasks: 'CLI triage command testing, issue reproduction scripts, and scoped bug fix pull requests with tests.',
@@ -371,13 +365,7 @@ export const trackProjectIndexId: Array<TrackProjectMapping> = [
     tasks: 'Contoh penggunaan CLI di berbagai proyek, panduan Conventional Commits, dan pengujian lintas platform Windows/Linux.',
   },
   {
-    level: 'Level 4: Kolaborasi & Alur Kerja Tim',
-    project: 'Dev Workflow Knowledge Hub',
-    repository: 'https://github.com/programinglive/dev-workflow-mcp-server',
-    tasks: 'Skema tools Model Context Protocol, validasi gerbang diagram alur, sinkronisasi state SQLite, dan penambahan kasus uji tes otomatis.',
-  },
-  {
-    level: 'Level 5: Kontribusi Open Source & Review',
+    level: 'Level 4: Kontribusi Open Source & Review',
     project: 'SentryResolve',
     repository: 'https://github.com/programinglive/sentry-resolve',
     tasks: 'Pengujian perintah triase CLI, pembuatan skrip reproduksi isu bug, dan pull request perbaikan dengan pengujian mandiri.',
