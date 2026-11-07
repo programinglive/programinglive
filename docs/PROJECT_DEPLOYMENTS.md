@@ -14,6 +14,13 @@ This page is the portal-level index for deployment setup across Programinglive p
 - Preserved production state: `.env` and `storage` are excluded from the code sync; Laravel migrations and cache refreshes run as part of deployment.
 - Detailed runbook: [`belajar/docs/DEPLOYMENT.md`](https://github.com/programinglive/belajar/blob/master/docs/DEPLOYMENT.md).
 
+## Dev Workflow Knowledge Hub (Internal Tooling)
+
+- Repository: [programinglive/dev-workflow-mcp-server](https://github.com/programinglive/dev-workflow-mcp-server) (Private)
+- Runtime: Node.js (v18+), Model Context Protocol (MCP) server with SQLite session state and internal dashboard monitor.
+- Hosting: Central dashboard monitor on internal monitoring server (`http://100.107.65.21:3100`); private internal MCP tooling for engineering workflows.
+- MCP Ecosystem: Provides strict TDD enforcement, visual Mermaid architecture flow gates, and multi-agent coordination.
+
 ### Operations
 
 Connect to the server with the configured GCP account:

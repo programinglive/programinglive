@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises'
 import test from 'node:test'
 
 const openSourcePage = await readFile(new URL('../app/open-source/page.tsx', import.meta.url), 'utf8')
+const idOpenSourcePage = await readFile(new URL('../app/id/open-source/page.tsx', import.meta.url), 'utf8')
 const programsPage = await readFile(new URL('../app/programs/page.tsx', import.meta.url), 'utf8')
 const homePage = await readFile(new URL('../app/page.tsx', import.meta.url), 'utf8')
 const navbar = await readFile(new URL('../components/Navbar.tsx', import.meta.url), 'utf8')
@@ -21,7 +22,6 @@ const siteBrowserPilot = await readFile(new URL('../scripts/site-browser-smoke.c
 
 test('featured GitHub links use the canonical project repositories', () => {
   const expectedRepositories = [
-    'https://github.com/programinglive/dev-workflow-mcp-server',
     'https://github.com/programinglive/commiter',
     'https://github.com/programinglive/sentry-resolve',
   ]
@@ -30,6 +30,7 @@ test('featured GitHub links use the canonical project repositories', () => {
     assert.ok(openSourcePage.includes(repository), `Missing canonical repository link: ${repository}`)
   }
 
+  assert.ok(!openSourcePage.includes('https://github.com/programinglive/dev-workflow-mcp-server'), 'Private repo must not be listed in public open-source')
   assert.ok(!openSourcePage.includes('https://github.com/programinglive/sentryresolve'))
 })
 
@@ -51,6 +52,11 @@ test('featured Open Source project links use HTTPS', () => {
 
   assert.ok(externalLinks.length > 0, 'Expected to find external project links')
   assert.ok(externalLinks.every((href) => href.startsWith('https://')), 'All external links must use HTTPS')
+})
+
+test('private Dev Workflow is excluded from public open source pages', () => {
+  assert.ok(!openSourcePage.includes('https://devworkflow.programinglive.com/'), 'Deactivated site should not be listed on open-source page')
+  assert.ok(!idOpenSourcePage.includes('https://devworkflow.programinglive.com/'), 'Deactivated site should not be listed on id open-source page')
 })
 
 test('homepage publishes a roadmap-based development bulletin', () => {
@@ -127,8 +133,8 @@ test('core persona entry points are present across both languages', async () => 
 
   // 4. Developer: finds appropriate contribution path and canonical repositories
   const idOpenSource = await readFile(new URL('../app/id/open-source/page.tsx', import.meta.url), 'utf8')
-  assert.ok(openSourcePage.includes('https://github.com/programinglive/dev-workflow-mcp-server'))
-  assert.ok(idOpenSource.includes('https://github.com/programinglive/dev-workflow-mcp-server'))
+  assert.ok(openSourcePage.includes('https://github.com/programinglive/commiter'))
+  assert.ok(idOpenSource.includes('https://github.com/programinglive/commiter'))
 })
 
 test('production pilot covers learner and institutional journeys and reports to Discord', () => {

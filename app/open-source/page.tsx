@@ -49,19 +49,6 @@ const projects: Array<OpenSourceProject> = [
     tasks: 'Documentation improvements, framework integration examples, and cross-platform terminal testing.',
   },
   {
-    name: 'Dev Workflow Knowledge Hub',
-    objective: 'Make workflow history, operational commands, and context documentation easier to inspect.',
-    stack: 'Node.js · MCP · Web',
-    difficulty: 'Intermediate',
-    status: 'Maintained',
-    maintainers: 'ProgramingLive',
-    repository: 'https://github.com/programinglive/dev-workflow-mcp-server',
-    website: 'https://devworkflow.programinglive.com/',
-    contributing: 'https://github.com/programinglive/dev-workflow-mcp-server/blob/main/CONTRIBUTING.md',
-    setup: 'git clone https://github.com/programinglive/dev-workflow-mcp-server.git && cd dev-workflow-mcp-server && npm install && npm test',
-    tasks: 'Model Context Protocol schema descriptions, reproducible test cases, and developer workflow guides.',
-  },
-  {
     name: 'SentryResolve',
     objective: 'Provide a focused interface and CLI for issue triage and resolution workflows.',
     stack: 'PHP · Sentry API · Web',
@@ -155,20 +142,20 @@ export default function OpenSourcePage() {
                 </div>
                 <div className="flex shrink-0 flex-wrap gap-2">
                   <a
-                    href={project.repository}
+                    href={project.website}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex min-h-11 items-center rounded-full bg-slate-950 px-5 text-sm font-semibold text-white hover:bg-cyan-800"
                   >
-                    Repository ↗
+                    Website ↗
                   </a>
                   <a
-                    href={project.website}
+                    href={project.repository}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex min-h-11 items-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-800 hover:bg-slate-50"
                   >
-                    Website ↗
+                    Repository ↗
                   </a>
                   <a
                     href={project.contributing}

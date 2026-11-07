@@ -52,20 +52,6 @@ const projects: Array<ProjectItem> = [
     tasks: 'Dokumentasi, contoh penggunaan di berbagai framework, dan validasi lintas platform Windows/Linux.',
   },
   {
-    name: 'Dev Workflow Knowledge Hub',
-    objective: 'Mempermudah peninjauan riwayat alur kerja, perintah operasional, dan dokumentasi eksekusi pengembangan.',
-    stack: 'Node.js · MCP · Web',
-    difficulty: 'Intermediate',
-    difficultyLabel: 'Menengah',
-    status: 'Dipelihara',
-    maintainers: 'ProgramingLive',
-    repository: 'https://github.com/programinglive/dev-workflow-mcp-server',
-    website: 'https://devworkflow.programinglive.com/',
-    contributing: 'https://github.com/programinglive/dev-workflow-mcp-server/blob/main/CONTRIBUTING.md',
-    setup: 'git clone https://github.com/programinglive/dev-workflow-mcp-server.git && cd dev-workflow-mcp-server && npm install && npm test',
-    tasks: 'Dokumentasi skema tools MCP, penambahan kasus uji tes otomatis, dan perbaikan panduan integrasi editor.',
-  },
-  {
     name: 'SentryResolve',
     objective: 'Menyediakan antarmuka dan CLI terfokus untuk alur triase serta resolusi isu di Sentry.',
     stack: 'PHP · Sentry API · Web',
@@ -169,20 +155,20 @@ export default function IndonesianOpenSourcePage() {
                 </div>
                 <div className="flex shrink-0 flex-wrap gap-2">
                   <a
-                    href={project.repository}
+                    href={project.website}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex min-h-11 items-center rounded-full bg-slate-950 px-5 text-sm font-semibold text-white hover:bg-cyan-800"
                   >
-                    Repositori ↗
+                    Situs Web ↗
                   </a>
                   <a
-                    href={project.website}
+                    href={project.repository}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex min-h-11 items-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-800 hover:bg-slate-50"
                   >
-                    Situs Web ↗
+                    Repositori ↗
                   </a>
                   <a
                     href={project.contributing}
