@@ -55,6 +55,8 @@ git push --follow-tags origin main
 
 GitHub Actions verifies pull requests and `main` updates. A pushed version tag deploys to Netlify production after the checks pass. Configure the `NETLIFY_AUTH_TOKEN` repository secret before creating a production release; see [deployment instructions](./docs/DEPLOYMENT.md).
 
+CI calls the shared `programinglive/ci-cd` workflow, which runs `npm test`, `npm run build`, and `npm audit --omit=dev --audit-level=high`. The audit is a hard gate: dependencies with a high or critical advisory fail the pull request. Next.js is pinned at `^16.4.5` because 16.0.0–16.4.0 carries critical advisories (GHSA-2464-fhr4-w9xw, GHSA-p3m5-59mp-jv5r, GHSA-673q-mjm6-r5xr).
+
 ## Canonical Infrastructure & Deployments
 
 For the authoritative register of all canonical domains, active Netlify fleet, GCP Load Balancer topology, and locked services (including BOTOL Discord verification), see the [Canonical Domain & Deployment Registry](./docs/PROJECT_DEPLOYMENTS.md).
