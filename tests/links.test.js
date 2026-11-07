@@ -23,7 +23,8 @@ const siteBrowserPilot = await readFile(new URL('../scripts/site-browser-smoke.c
 test('featured GitHub links use the canonical project repositories', () => {
   const expectedRepositories = [
     'https://github.com/programinglive/commiter',
-    'https://github.com/programinglive/sentry-resolve',
+    'https://github.com/programinglive/hris',
+    'https://github.com/programinglive/dbpinball',
   ]
 
   for (const repository of expectedRepositories) {
@@ -31,6 +32,7 @@ test('featured GitHub links use the canonical project repositories', () => {
   }
 
   assert.ok(!openSourcePage.includes('https://github.com/programinglive/dev-workflow-mcp-server'), 'Private repo must not be listed in public open-source')
+  assert.ok(!openSourcePage.includes('https://github.com/programinglive/sentry-resolve'), 'Archived repo must not be listed in active open-source')
   assert.ok(!openSourcePage.includes('https://github.com/programinglive/sentryresolve'))
 })
 

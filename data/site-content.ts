@@ -345,9 +345,15 @@ export const trackProjectIndex: Array<TrackProjectMapping> = [
   },
   {
     level: 'Level 4: Open Source & Code Review',
-    project: 'SentryResolve',
-    repository: 'https://github.com/programinglive/sentry-resolve',
-    tasks: 'CLI triage command testing, issue reproduction scripts, and scoped bug fix pull requests with tests.',
+    project: 'HRIS Community',
+    repository: 'https://github.com/programinglive/hris',
+    tasks: 'Attendance module validation, payroll test coverage expansion, and multi-tenant permission fixtures.',
+  },
+  {
+    level: 'Level 5: Workspace & Architecture',
+    project: 'DB Pinball',
+    repository: 'https://github.com/programinglive/dbpinball',
+    tasks: 'Query runner performance, driver connections (Postgres/MySQL/SQLite), and Laravel adapter hooks.',
   },
 ]
 
@@ -366,9 +372,15 @@ export const trackProjectIndexId: Array<TrackProjectMapping> = [
   },
   {
     level: 'Level 4: Kontribusi Open Source & Review',
-    project: 'SentryResolve',
-    repository: 'https://github.com/programinglive/sentry-resolve',
-    tasks: 'Pengujian perintah triase CLI, pembuatan skrip reproduksi isu bug, dan pull request perbaikan dengan pengujian mandiri.',
+    project: 'HRIS Community',
+    repository: 'https://github.com/programinglive/hris',
+    tasks: 'Validasi modul presensi karyawan, penambahan cakupan tes payroll, dan pengujian perizinan multi-cabang.',
+  },
+  {
+    level: 'Level 5: Arsitektur Workspace & Database',
+    project: 'DB Pinball',
+    repository: 'https://github.com/programinglive/dbpinball',
+    tasks: 'Peningkatan performa query runner, koneksi driver database (Postgres/MySQL/SQLite), dan integrasi adapter Laravel.',
   },
 ]
 

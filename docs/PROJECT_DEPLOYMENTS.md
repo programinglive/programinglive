@@ -14,10 +14,10 @@ All sites in this tier are hosted on Netlify, served under the Netlify global ed
 | :--- | :--- | :--- | :--- |
 | `programinglive.com` / `www` | `programingliveweb` | `programinglive/programinglive` | **Active Core**. Main bilingual platform website (Next.js 16). |
 | `commiter.programinglive.com` | `commiter` | `programinglive/commiter` | **Active Core**. Documentation and landing page for `@programinglive/commiter`. |
-| `sentryresolve.programinglive.com` | `sentry-resolve` | `programinglive/sentry-resolve` | **Active Core**. Documentation and landing page for `sentry-resolve` CLI. |
+| `sentryresolve.programinglive.com` | `sentry-resolve` | `programinglive/sentry-resolve` | **Archived**. Superseded by dev-workflow and ops agent. |
 | `portfolio.programinglive.com` | `programingliveportfolio` | Private | **Active Core**. Mahatma Mahardhika professional portfolio and founder profile. |
-| `laravelsimplebackup.programinglive.com` | `laravelsimplebackup` | `programinglive/laravel-simple-backup` | **Active Core**. Documentation for the Laravel database backup package. |
-| `zettly-editor.programinglive.com` | `zettly-editor` | Private | **Active Core**. Web demo and interactive editor component for Zettly. |
+| `laravelsimplebackup.programinglive.com` | `laravelsimplebackup` | `programinglive/dbpinball` | **Consolidated**. Moved to DB Pinball under `packages/laravel-adapter`. |
+| `zettly-editor.programinglive.com` | `zettly-editor` | `programinglive/zettly-editor` | **Active Core**. Web demo and interactive editor component for Zettly. |
 | `comingsoon.programinglive.com` | `programinglivecomingsoon` | Private | **Active Core**. Standard placeholder & teaser landing page for upcoming projects. |
 
 ---
