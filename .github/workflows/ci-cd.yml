@@ -26,10 +26,10 @@ jobs:
     with:
       node-version: "20"
       build-command: npm run build
-      # Ubuntu-hosted until the self-hosted bw-tools runner is installed.
-      # The bw-tools runner needs an organisation registration token; switch
-      # this line to '["self-hosted","linux","bw-tools"]' afterwards.
-      runner: '["ubuntu-latest"]'
+      # Self-hosted Windows runner on MMCH (mmch-programinglive), so no
+      # GitHub-hosted minutes are spent and the build matches the fleet.
+      runner: '["self-hosted","windows","mmch","programinglive"]'
+      cache: ""
 
   deploy-production:
     name: Deploy release to Netlify production
