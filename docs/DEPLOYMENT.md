@@ -41,4 +41,4 @@ Verified: `https://blog.programinglive.com/2025/05/algoritma-binary-search.html`
 
 Revert path: set the Cloudflare CNAME `blog` back to `ghs.google.com` (record id `32917134ef5e939b7941d72baef2434c`) and, if needed, remove the domain from the site's `domain_aliases`. DNS changes must never happen as an incidental step.
 
-Follow-up: retire the Blogger property (`blog.programinglive.com` is no longer serving Blogspot content).
+The legacy Blogger property is intentionally left dormant: `blog.programinglive.com` no longer resolves to Blogspot, and no ads or ad-sense content is served from the old domain. No further action is required.
