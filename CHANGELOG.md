@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/programinglive/programinglive/compare/v0.1.14...v0.2.0) (2026-11-10)
+
+
+### ✅ Tests
+
+* update app/id/open-source/page.tsx, app/open-source/page.tsx, data/site-content.ts +2 more ([9a7e9f6](https://github.com/programinglive/programinglive/commit/9a7e9f6fac92813c58d524d78c2ea18cf6cd55c4))
+* update app/id/open-source/page.tsx, app/open-source/page.tsx, data/site-content.ts +2 more ([6f526ca](https://github.com/programinglive/programinglive/commit/6f526ca1e59c5ec22156ff58408b8bec575e74f3))
+* update app/id/open-source/page.tsx, app/open-source/page.tsx, data/site-content.ts +2 more ([2f38afe](https://github.com/programinglive/programinglive/commit/2f38afeda671c729dabff3f2c466a96aa806ecf2))
+* update README.md, docs/PROJECT_DEPLOYMENTS.md, and tests/links.test.js ([c9a23bf](https://github.com/programinglive/programinglive/commit/c9a23bf1561973b773dac9e28efe039eaa45a0cc))
+
+
+### 🐛 Bug Fixes
+
+* **deps:** upgrade Next.js to 16.4.5 for the critical advisory ([#4](https://github.com/programinglive/programinglive/issues/4)) ([45c0e66](https://github.com/programinglive/programinglive/commit/45c0e66436cf984908d9cd12270622e647d05227))
+* **notify:** announce deploy result through the relay on erp.beautyworld.id ([35cca9b](https://github.com/programinglive/programinglive/commit/35cca9be65bab260c3756b2ea5a482393c247911))
+* **notify:** stop waiting for a deploy that will never start ([551325f](https://github.com/programinglive/programinglive/commit/551325fbbef81e6b43985ad7fcabb95bce2bab21))
+* **notify:** wait for the real deploy job and skip runs that deploy nothing ([488495d](https://github.com/programinglive/programinglive/commit/488495d0bd3d2024f1f339630af329d5dae103df))
+* **pilot:** laporan Discord tidak boleh menggagalkan pilot yang sehat ([ab9c2af](https://github.com/programinglive/programinglive/commit/ab9c2afdd6ab7fea599487e3b1d4c0841b063cd5))
+* **test:** align smoke test assertions with page content and improve browser stability ([825d3d1](https://github.com/programinglive/programinglive/commit/825d3d1e0e3406725020122ea3d4f6ec3993d378))
+
+
+### 🧹 Chores
+
+* **ci:** run the shared Node workflow on the self-hosted MMCH runner ([#5](https://github.com/programinglive/programinglive/issues/5)) ([9372f09](https://github.com/programinglive/programinglive/commit/9372f09a338cc1d1992a508c30e0feab29904a04))
+* **ci:** use the shared programinglive/ci-cd workflow ([#3](https://github.com/programinglive/programinglive/issues/3)) ([c89d1b8](https://github.com/programinglive/programinglive/commit/c89d1b8fdf71f8034d51dd7f72be51b58cd1c102))
+
+
+### ✨ Features
+
+* **blog:** migrate Blogspot archive into /id/blog Pustaka library ([2a7e2c9](https://github.com/programinglive/programinglive/commit/2a7e2c94e13fe8fb6ec83877d72f09f22ad7fbdf))
+* **notify:** send bulletin and deploy results through the notification relay ([fe78453](https://github.com/programinglive/programinglive/commit/fe78453b51d992120d0eeb7c0cab5aba2cb816ab))
+
+
+### 📝 Documentation
+
+* record pending owner CNAME action for legacy blog.programinglive.com 301s ([cc5ddb6](https://github.com/programinglive/programinglive/commit/cc5ddb6df4adbcd5db07f8dc4cfc70cf17a9ccff))
+* update release notes for v0.1.14 ([d5961c5](https://github.com/programinglive/programinglive/commit/d5961c5ddb5afa7a9336a1a52e8efcb3b2087941))
+
 ### [0.1.14](https://github.com/programinglive/programinglive/compare/v0.1.13...v0.1.14) (2026-10-07)
 
 

@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.2.0 | 2026-11-10 | See CHANGELOG for details. |
 | 0.1.14 | 2026-10-07 | complete platform roadmap, bilingual parity, and governance milestones (61fb7e6) |
 | 0.1.13 | 2026-10-06 | update release notes for v0.1.12 (6685c83) |
 | 0.1.12 | 2026-10-06 | advance Belajar roadmap progress (3b23db2) |
@@ -31,6 +32,13 @@
 
 
 
+
+
+## 0.2.0
+
+Released on **2026-11-10**.
+
+- See CHANGELOG for details.
 
 ## 0.1.14 – ✨ Features
 
