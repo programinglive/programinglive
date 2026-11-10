@@ -29,6 +29,16 @@ If Netlify's Git integration is also configured to deploy pushes to `main`, it m
 
 The workflow uses Netlify CLI `27.10.1` pinned in the command and the Node version declared by `netlify.toml`. A failed test/build prevents deployment; a failed health/build/deploy step leaves the previous Netlify production deploy active.
 
-## Pending owner action: legacy Blogspot domain (v0.2.0)
+## Legacy Blogspot domain cutover (v0.2.0) — DONE
 
-The Pustaka migration publishes `public/_redirects` with 301 rules for every legacy blog.programinglive.com permalink. Those rules only apply on the Netlify hostname `blog.programinglive.com`, so the owner must add a CNAME record pointing `blog.programinglive.com` at the Netlify site (Netlify domain settings or the DNS provider). Until then legacy permalinks keep resolving on Blogger and will not redirect. After the CNAME is live, verify one legacy permalink 301s to `/id/blog/<slug>` and retire the Blogger property. DNS changes must never happen as an incidental step.
+Completed 2026-11-10. `blog.programinglive.com` now serves the Netlify site:
+
+1. Netlify: `blog.programinglive.com` registered on the site via `PATCH /sites/{id}` `domain_aliases` (site `programingliveweb`).
+2. Cloudflare (zone `programinglive.com`): CNAME `blog` flipped from `ghs.google.com` to `programingliveweb.netlify.app` (unproxied, TTL 1).
+3. Netlify universal-SSL cert for the domain was only issued after a fresh deploy re-ran the TLS pipeline (restoring the latest deploy triggered it).
+
+Verified: `https://blog.programinglive.com/2025/05/algoritma-binary-search.html` → `301 /id/blog/algoritma-binary-search` → `200`, and `https://blog.programinglive.com/id/blog` → `200`.
+
+Revert path: set the Cloudflare CNAME `blog` back to `ghs.google.com` (record id `32917134ef5e939b7941d72baef2434c`) and, if needed, remove the domain from the site's `domain_aliases`. DNS changes must never happen as an incidental step.
+
+Follow-up: retire the Blogger property (`blog.programinglive.com` is no longer serving Blogspot content).
