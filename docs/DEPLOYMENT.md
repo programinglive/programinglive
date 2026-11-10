@@ -42,3 +42,13 @@ Verified: `https://blog.programinglive.com/2025/05/algoritma-binary-search.html`
 Revert path: set the Cloudflare CNAME `blog` back to `ghs.google.com` (record id `32917134ef5e939b7941d72baef2434c`) and, if needed, remove the domain from the site's `domain_aliases`. DNS changes must never happen as an incidental step.
 
 The legacy Blogger property is intentionally left dormant: `blog.programinglive.com` no longer resolves to Blogspot, and no ads or ad-sense content is served from the old domain. No further action is required.
+
+## Blog post image archive (GCS)
+
+All blog post images are mirrored in `gs://programinglive-blog-images-377312/posts/` (project `phrasal-ground-377312`, location `asia-southeast2`). Archive: 227 files, 44.3 MB, uploaded 2026-11-10 from `public/img/posts/`.
+
+To restore or re-seed the repository image set from the archive:
+
+```
+gsutil -m cp -r gs://programinglive-blog-images-377312/posts/ <checkout>/public/img/posts/
+```
