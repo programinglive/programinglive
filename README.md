@@ -7,6 +7,7 @@ ProgramingLive is an open learning and technology education platform building pa
 - **Responsive hero and program overview** with clear calls to action.
 - **Reusable layout and design components** shared across programs, learning, impact, partner, open-source, and roadmap pages.
 - **Bilingual public site** with English-first and Indonesian routes.
+- **Creator Studio Pustaka library** at `/id/blog` with 227 migrated posts, seven category filters, SSG detail pages, and 301 redirects for every legacy blogspot permalink.
 - **Public roadmap and development bulletin** shared with Discord.
 - **Synthetic production pilot** covering learner, institution, funder, and contributor journeys.
 - **Dedicated legal pages** for Privacy, Community Guidelines, and Terms of Service.
@@ -31,10 +32,13 @@ npm run dev
 ```
 ├── app/                 # Next.js routes and global styles
 ├── components/          # Shared navbar and footer components
-├── public/              # Static assets and sponsor logos
+├── content/
+│   └── posts/           # 227 migrated blog posts (markdown + frontmatter)
+├── data/                # Typed content loaders and site data
+├── public/              # Static assets, post cover images, and _redirects
 ├── docs/
 │   └── release-notes/   # Cumulative release notes maintained by the release script
-├── scripts/             # Release automation helpers
+├── scripts/             # Release automation + Blogspot import/merge pipeline
 └── README.md
 ```
 

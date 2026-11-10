@@ -1,7 +1,7 @@
 {
-  "updatedAt": "October 7, 2026",
-  "currentFocus": "All 7 roadmap priorities (P0 through P6) are 100% complete, verified, and operational across production.",
-  "nextUp": "Maintain active monthly review cycles, support cohort learners, and prepare future release v0.1.14.",
+  "updatedAt": "November 10, 2026",
+  "currentFocus": "P7 Blogspot archive migration is complete: 227 posts publish to /id/blog, legacy permalinks 301-redirect, and two near-duplicate pairs merge into canonical posts.",
+  "nextUp": "Cut the tagged release carrying P7, point blog.programinglive.com DNS at the Netlify site, and retire the Blogger property.",
   "roadmapUrl": "https://github.com/programinglive/programinglive/blob/main/docs/IMPLEMENTATION_ROADMAP.md",
   "goals": [
     {
@@ -59,6 +59,14 @@
       "completed": 9,
       "total": 9,
       "summary": "The new positioning, dual-audience experience, core information architecture, design system, trust foundations, bilingual route parity, production pilot bot, terminology validation, and user journey testing are verified."
+    },
+    {
+      "priority": "P7",
+      "title": "Blogspot archive migration",
+      "status": "Complete",
+      "completed": 4,
+      "total": 4,
+      "summary": "All 229 legacy posts imported into the /id/blog library with self-hosted images and 301 redirects; two curated near-duplicate pairs merged into canonical posts; 227 final routes are SSG, sitemap-covered, and test-verified."
     }
   ]
 }
