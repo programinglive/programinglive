@@ -26,9 +26,10 @@ jobs:
     with:
       node-version: "20"
       build-command: npm run build
-      # Self-hosted Windows runner on MMCH (mmch-programinglive), so no
-      # GitHub-hosted minutes are spent and the build matches the fleet.
-      runner: '["self-hosted","windows","mmch","programinglive"]'
+      # Self-hosted Linux runner on the bw-tools GCP VM
+      # (bwtools-programinglive); MMCH's code-integrity policy blocks new
+      # runner installs, and the build matches the ubuntu-latest deploy job.
+      runner: '["self-hosted","linux","bwtools","programinglive"]'
       cache: ""
 
   deploy-production:
