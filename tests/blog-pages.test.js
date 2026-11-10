@@ -84,7 +84,9 @@ test('complementary duplicate pairs keep their related cross-links in frontmatte
 })
 
 test('public/_redirects maps every blogspot permalink to the new library slug', () => {
-  const lines = redirects.split('\n').filter((line) => line.trim() && !line.startsWith('#'))
+  // Normalize line endings: the file is LF in the repo but CRLF in Windows
+  // working trees (core.autocrlf), which would leave a trailing \r per line.
+  const lines = redirects.split(/\r?\n/).filter((line) => line.trim() && !line.startsWith('#'))
   // 227 surviving posts + 2 merged-source overrides + 3 Blogspot fallbacks.
   assert.equal(lines.length, postFiles.length + 5, 'one 301 per post, merged-source overrides and three fallbacks')
   const redirectSet = new Set(lines)
