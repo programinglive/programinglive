@@ -83,6 +83,17 @@ Status: complete.
 
 Exit criteria: a learner can identify where to start within ten seconds; an institution can understand the program and partnership model; a funder can understand stage and measurement; and a developer can find an appropriate contribution path.
 
+## P7 — Migrate the Blogspot archive into the Creator Studio library
+
+Status: complete.
+
+- [x] Import every post from blog.programinglive.com into `content/posts/` with typed frontmatter, self-hosted cover images, and Netlify 301 redirects for each legacy permalink.
+- [x] Publish the `/id/blog` Pustaka library with seven category filters and statically generated `/id/blog/<slug>` detail pages (GFM, stripped table-of-contents, sanitized code fences).
+- [x] Merge the two curated near-duplicate pairs into their canonical posts, delete the redundant source files and image directories, and 301 their legacy permalinks straight to the canonical slugs.
+- [x] Keep complementary duplicate pairs visible with `related` cross-links and include all 227 migrated routes in the sitemap.
+
+Exit criteria: a legacy blogspot permalink resolves to the new library, all migrated content is lossless and self-hosted, and each duplicate pair resolves to a single canonical post.
+
 ## Daily Codex working agreement
 
 1. Review the selected repository's Git status and existing changes before editing; preserve unrelated work.

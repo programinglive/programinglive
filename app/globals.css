@@ -11,3 +11,23 @@ body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, B
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+
+/* Migrated Blogspot post content */
+.post-content { color: #1e293b; font-size: 1rem; line-height: 1.75; }
+.post-content > * + * { margin-top: 1rem; }
+.post-content h2 { margin-top: 2.5rem; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; color: #0f172a; }
+.post-content h3 { margin-top: 2rem; font-size: 1.25rem; font-weight: 700; color: #0f172a; }
+.post-content h4, .post-content h5, .post-content h6 { margin-top: 1.5rem; font-weight: 700; color: #0f172a; }
+.post-content a { color: #0e7490; text-decoration: underline; }
+.post-content img { border-radius: 1rem; }
+.post-content ul, .post-content ol { padding-left: 1.5rem; }
+.post-content ul { list-style: disc; }
+.post-content ol { list-style: decimal; }
+.post-content li { margin-top: 0.35rem; }
+.post-content blockquote { border-left: 4px solid #a5f3fc; padding-left: 1rem; color: #475569; font-style: italic; }
+.post-content code { background: #f1f5f9; border-radius: 0.375rem; padding: 0.15rem 0.4rem; font-size: 0.875em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.post-content pre { background: #0f172a; color: #e2e8f0; border-radius: 0.9rem; padding: 1rem 1.25rem; overflow-x: auto; }
+.post-content pre code { background: transparent; padding: 0; color: inherit; font-size: 0.875rem; }
+.post-content table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.post-content th, .post-content td { border: 1px solid #e2e8f0; padding: 0.5rem 0.75rem; text-align: left; }
+.post-content th { background: #f8fafc; font-weight: 600; }
