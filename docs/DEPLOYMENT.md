@@ -28,3 +28,7 @@ If Netlify's Git integration is also configured to deploy pushes to `main`, it m
 5. Verify the deployment at [programinglive.com](https://programinglive.com/) and review the Netlify deploy details linked from the Actions run.
 
 The workflow uses Netlify CLI `27.10.1` pinned in the command and the Node version declared by `netlify.toml`. A failed test/build prevents deployment; a failed health/build/deploy step leaves the previous Netlify production deploy active.
+
+## Pending owner action: legacy Blogspot domain (v0.2.0)
+
+The Pustaka migration publishes `public/_redirects` with 301 rules for every legacy blog.programinglive.com permalink. Those rules only apply on the Netlify hostname `blog.programinglive.com`, so the owner must add a CNAME record pointing `blog.programinglive.com` at the Netlify site (Netlify domain settings or the DNS provider). Until then legacy permalinks keep resolving on Blogger and will not redirect. After the CNAME is live, verify one legacy permalink 301s to `/id/blog/<slug>` and retire the Blogger property. DNS changes must never happen as an incidental step.
