@@ -20,7 +20,7 @@
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
     "@netlify/plugin-nextjs": "^5.16.2",
-    "@programinglive/commiter": "^1.5.0",
+    "@programinglive/commiter": "^1.5.1",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/react": "^18.2.70",
     "@types/react-dom": "^18.2.22",
