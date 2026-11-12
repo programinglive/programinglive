@@ -10,17 +10,17 @@
     "test": "node --test",
     "bulletin:discord": "node scripts/post-development-bulletin.cjs",
     "prepare": "husky",
-    "release": "node scripts/release.cjs",
-    "release:major": "node scripts/release.cjs major",
-    "release:minor": "node scripts/release.cjs minor",
-    "release:patch": "node scripts/release.cjs patch",
-    "release:first": "node scripts/release.cjs --first-release"
+    "release": "commiter release",
+    "release:major": "commiter release major",
+    "release:minor": "commiter release minor",
+    "release:patch": "commiter release patch",
+    "release:first": "commiter release --first-release"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
     "@netlify/plugin-nextjs": "^5.16.2",
-    "@programinglive/commiter": "^1.2.17",
+    "@programinglive/commiter": "^1.5.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/react": "^18.2.70",
     "@types/react-dom": "^18.2.22",
@@ -105,5 +105,10 @@
     "react-dom": "^18.2.0",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1"
+  },
+  "commiter": {
+    "release": {
+      "branch": "main"
+    }
   }
 }
