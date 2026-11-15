@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/programinglive/programinglive/compare/v0.1.14...v0.2.1) (2026-11-15)
+
+
+### 🐛 Bug Fixes
+
+* **deps:** upgrade Next.js to 16.4.5 for the critical advisory ([#4](https://github.com/programinglive/programinglive/issues/4)) ([45c0e66](https://github.com/programinglive/programinglive/commit/45c0e66436cf984908d9cd12270622e647d05227))
+* **notify:** announce deploy result through the relay on erp.beautyworld.id ([35cca9b](https://github.com/programinglive/programinglive/commit/35cca9be65bab260c3756b2ea5a482393c247911))
+* **notify:** stop waiting for a deploy that will never start ([551325f](https://github.com/programinglive/programinglive/commit/551325fbbef81e6b43985ad7fcabb95bce2bab21))
+* **notify:** wait for the real deploy job and skip runs that deploy nothing ([488495d](https://github.com/programinglive/programinglive/commit/488495d0bd3d2024f1f339630af329d5dae103df))
+* **pilot:** laporan Discord tidak boleh menggagalkan pilot yang sehat ([ab9c2af](https://github.com/programinglive/programinglive/commit/ab9c2afdd6ab7fea599487e3b1d4c0841b063cd5))
+* **test:** align smoke test assertions with page content and improve browser stability ([825d3d1](https://github.com/programinglive/programinglive/commit/825d3d1e0e3406725020122ea3d4f6ec3993d378))
+
+
+### ✅ Tests
+
+* normalize _redirects line endings in blog-pages test for Windows working trees ([4a8c3ee](https://github.com/programinglive/programinglive/commit/4a8c3ee10e99e306483d487a84be7a6b7594c106))
+* update app/id/open-source/page.tsx, app/open-source/page.tsx, data/site-content.ts +2 more ([9a7e9f6](https://github.com/programinglive/programinglive/commit/9a7e9f6fac92813c58d524d78c2ea18cf6cd55c4))
+* update app/id/open-source/page.tsx, app/open-source/page.tsx, data/site-content.ts +2 more ([6f526ca](https://github.com/programinglive/programinglive/commit/6f526ca1e59c5ec22156ff58408b8bec575e74f3))
+* update app/id/open-source/page.tsx, app/open-source/page.tsx, data/site-content.ts +2 more ([2f38afe](https://github.com/programinglive/programinglive/commit/2f38afeda671c729dabff3f2c466a96aa806ecf2))
+* update README.md, docs/PROJECT_DEPLOYMENTS.md, and tests/links.test.js ([c9a23bf](https://github.com/programinglive/programinglive/commit/c9a23bf1561973b773dac9e28efe039eaa45a0cc))
+
+
+### 📝 Documentation
+
+* **deploy:** document GCS image archive for blog posts ([7dfd25d](https://github.com/programinglive/programinglive/commit/7dfd25d5d8790cd60b75a91dce579a5fcd06b8cf))
+* **deploy:** drop Blogger retirement follow-up per owner decision ([62b99e6](https://github.com/programinglive/programinglive/commit/62b99e6ccb64f948979de8785d07eb7adb08f251))
+* **deploy:** mark legacy blogspot cutover as done ([b5ac451](https://github.com/programinglive/programinglive/commit/b5ac45159e7ce0b6c17e02935eb3d1581b0a4883))
+* record pending owner CNAME action for legacy blog.programinglive.com 301s ([cc5ddb6](https://github.com/programinglive/programinglive/commit/cc5ddb6df4adbcd5db07f8dc4cfc70cf17a9ccff))
+* update release notes for v0.1.14 ([d5961c5](https://github.com/programinglive/programinglive/commit/d5961c5ddb5afa7a9336a1a52e8efcb3b2087941))
+
+
+### 🧹 Chores
+
+* **ci:** move verify job to the bw-tools self-hosted runner ([04a551b](https://github.com/programinglive/programinglive/commit/04a551bd39d104744cf2d11c545dad2217da8685))
+* **ci:** run the shared Node workflow on the self-hosted MMCH runner ([#5](https://github.com/programinglive/programinglive/issues/5)) ([9372f09](https://github.com/programinglive/programinglive/commit/9372f09a338cc1d1992a508c30e0feab29904a04))
+* **ci:** use the shared programinglive/ci-cd workflow ([#3](https://github.com/programinglive/programinglive/issues/3)) ([c89d1b8](https://github.com/programinglive/programinglive/commit/c89d1b8fdf71f8034d51dd7f72be51b58cd1c102))
+* **deps:** override fast-uri to patched 3.1.9 ([48f7061](https://github.com/programinglive/programinglive/commit/48f7061f9786c67250503ac592412347bc2d82ee))
+* **hooks:** track pre-commit test verification script ([dc38535](https://github.com/programinglive/programinglive/commit/dc3853503e2acc49e9d435772de6fd7e25ecf2a7))
+* **release:** 0.2.0 🚀 ([cbc2d41](https://github.com/programinglive/programinglive/commit/cbc2d416b2c53b0190639c9e8b727a2bb8ef5ac7))
+* **release:** adopt commiter release v2 ([3a48ce7](https://github.com/programinglive/programinglive/commit/3a48ce721db48bfe8400548a9f566a562de4ebba))
+* **release:** bump commiter to 1.5.1 ([f1951e0](https://github.com/programinglive/programinglive/commit/f1951e095c8c7f82a48c43df46479503f3625418))
+
+
+### ✨ Features
+
+* **blog:** migrate Blogspot archive into /id/blog Pustaka library ([2a7e2c9](https://github.com/programinglive/programinglive/commit/2a7e2c94e13fe8fb6ec83877d72f09f22ad7fbdf))
+* **legal:** add Indonesian privacy policy page for WhatsApp Business ([e73382a](https://github.com/programinglive/programinglive/commit/e73382ac8e9be537e3870aa4700b6c72ded85ae2))
+* **notify:** send bulletin and deploy results through the notification relay ([fe78453](https://github.com/programinglive/programinglive/commit/fe78453b51d992120d0eeb7c0cab5aba2cb816ab))
+
 ## [0.2.0](https://github.com/programinglive/programinglive/compare/v0.1.14...v0.2.0) (2026-11-10)
 
 
