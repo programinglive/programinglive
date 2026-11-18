@@ -99,7 +99,8 @@ test('public/_redirects maps every blogspot permalink to the new library slug', 
     const pathname = new URL(merge.sourceUrl).pathname
     assert.ok(redirectSet.has(`${pathname} /id/blog/${merge.targetSlug} 301`), `merged source ${pathname} must 301 to ${merge.targetSlug}`)
   }
-  assert.ok(lines.includes('/ /id/blog 301'), 'blogspot homepage must fall back to the library')
+  assert.ok(!lines.includes('/ /id/blog 301'), 'root / must never redirect programinglive.com homepage')
+  assert.ok(lines.includes('https://blog.programinglive.com/ https://programinglive.com/id/blog 301'), 'blogspot homepage must fall back to the library')
   assert.ok(lines.some((line) => line.includes('/search')), 'blogspot search/label URLs must fall back to the library')
 })
 

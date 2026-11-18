@@ -591,7 +591,7 @@ function buildRedirects(posts) {
     const pathname = new URL(post.sourceUrl).pathname;
     lines.push(`${pathname} /id/blog/${post.slug} 301`);
   }
-  lines.push('/ /id/blog 301');
+  lines.push('https://blog.programinglive.com/ https://programinglive.com/id/blog 301');
   lines.push('/p/* /id/blog 301');
   lines.push('/search/* /id/blog 301');
   return lines;
