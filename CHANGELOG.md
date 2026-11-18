@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/programinglive/programinglive/compare/v0.2.1...v0.2.2) (2026-11-18)
+
+
+### 🐛 Bug Fixes
+
+* **redirects:** scope blogspot root redirect to blog.programinglive.com ([#9](https://github.com/programinglive/programinglive/issues/9)) ([714f585](https://github.com/programinglive/programinglive/commit/714f58569ddd0876bdc80735ad19169219b90cd2))
+
 ### [0.2.1](https://github.com/programinglive/programinglive/compare/v0.1.14...v0.2.1) (2026-11-15)
 
 
