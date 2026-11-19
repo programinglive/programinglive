@@ -15,7 +15,7 @@ Reviews occur on the **first Monday of each month** to evaluate real progression
    - Count of personal web page capstones meeting the responsive definition of done (tested on 375px and 1280px viewports without horizontal scrolling, accessible semantics).
 
 3. **Open-Source Contributions Merged:**
-   - Tally of merged pull requests across public ProgramingLive repositories (`programinglive`, `belajar`, `commiter`, `dev-workflow-mcp-server`, `sentry-resolve`).
+   - Tally of merged pull requests across public ProgramingLive repositories (`programinglive`, `belajar`, `commiter`, `dev-workflow`, `sentry-resolve`).
 
 4. **Learner & Mentor Feedback:**
    - Review of questions, friction points, and curriculum suggestions raised on GitHub Discussions (`https://github.com/programinglive/belajar/discussions`).

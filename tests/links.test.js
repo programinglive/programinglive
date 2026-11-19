@@ -31,7 +31,7 @@ test('featured GitHub links use the canonical project repositories', () => {
     assert.ok(openSourcePage.includes(repository), `Missing canonical repository link: ${repository}`)
   }
 
-  assert.ok(!openSourcePage.includes('https://github.com/programinglive/dev-workflow-mcp-server'), 'Private repo must not be listed in public open-source')
+  assert.ok(!openSourcePage.includes('https://github.com/programinglive/dev-workflow-mcp-server') && !openSourcePage.includes('https://github.com/programinglive/dev-workflow'), 'Private repo must not be listed in public open-source')
   assert.ok(!openSourcePage.includes('https://github.com/programinglive/sentry-resolve'), 'Archived repo must not be listed in active open-source')
   assert.ok(!openSourcePage.includes('https://github.com/programinglive/sentryresolve'))
 })
