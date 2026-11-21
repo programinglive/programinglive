@@ -190,7 +190,7 @@ export default async function IndonesianBlogPage({
             <ButtonLink href="https://github.com/programinglive/belajar/discussions" external>
               Buka GitHub Discussions ↗
             </ButtonLink>
-            <ButtonLink href="/guidelines.html" variant="secondary">
+            <ButtonLink href="/guidelines" variant="secondary">
               Baca Panduan Komunitas
             </ButtonLink>
           </div>

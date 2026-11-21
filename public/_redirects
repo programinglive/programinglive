@@ -1,3 +1,7 @@
+# Legacy Vite document URLs -> App Router routes
+/terms.html /terms 301
+/guidelines.html /guidelines 301
+
 # Blogspot -> programinglive.com blog migration (301)
 /2020/05/road-map-menuju-sukses.html /id/blog/road-map-menuju-sukses 301
 /2020/06/tujuan-hidup.html /id/blog/menentukan-tujuan-hidup 301

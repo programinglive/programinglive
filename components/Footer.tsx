@@ -3,13 +3,13 @@ import Link from 'next/link'
 const groupsEn = [
   { title: 'Platform', links: [['Programs', '/programs'], ['Learn', '/learn'], ['Open Source', '/open-source'], ['Roadmap', '/roadmap']] },
   { title: 'Organization', links: [['About', '/about'], ['Impact', '/impact'], ['Partners', '/partners'], ['Blog', '/blog']] },
-  { title: 'Trust', links: [['Transparency', '/about#transparency'], ['Privacy', '/privacy-policy'], ['Terms', '/terms.html'], ['Guidelines', '/guidelines.html']] },
+  { title: 'Trust', links: [['Transparency', '/about#transparency'], ['Privacy', '/privacy-policy'], ['Terms', '/terms'], ['Guidelines', '/guidelines']] },
 ]
 
 const groupsId = [
   { title: 'Platform', links: [['Program', '/id/programs'], ['Belajar', '/id/learn'], ['Open Source', '/id/open-source'], ['Roadmap', '/id/roadmap']] },
   { title: 'Organisasi', links: [['Tentang', '/id/about'], ['Dampak', '/id/impact'], ['Mitra', '/id/partners'], ['Blog', '/id/blog']] },
-  { title: 'Kepercayaan', links: [['Transparansi', '/id/about#transparency'], ['Privasi', '/privacy-policy'], ['Ketentuan', '/terms.html'], ['Panduan Komunitas', '/guidelines.html']] },
+  { title: 'Kepercayaan', links: [['Transparansi', '/id/about#transparency'], ['Privasi', '/privacy-policy'], ['Ketentuan', '/terms'], ['Panduan Komunitas', '/guidelines']] },
 ]
 
 export default function Footer({ locale = 'en' }: { locale?: 'en' | 'id' }) {

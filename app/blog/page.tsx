@@ -102,7 +102,7 @@ export default function BlogPage() {
             <ButtonLink href="https://github.com/programinglive/belajar/discussions" external>
               Join GitHub Discussions ↗
             </ButtonLink>
-            <ButtonLink href="/guidelines.html" variant="secondary">
+            <ButtonLink href="/guidelines" variant="secondary">
               Read Code of Conduct
             </ButtonLink>
           </div>
