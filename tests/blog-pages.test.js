@@ -87,8 +87,9 @@ test('public/_redirects maps every blogspot permalink to the new library slug', 
   // Normalize line endings: the file is LF in the repo but CRLF in Windows
   // working trees (core.autocrlf), which would leave a trailing \r per line.
   const lines = redirects.split(/\r?\n/).filter((line) => line.trim() && !line.startsWith('#'))
-  // 227 surviving posts + 2 merged-source overrides + 3 Blogspot fallbacks.
-  assert.equal(lines.length, postFiles.length + 5, 'one 301 per post, merged-source overrides and three fallbacks')
+  // 227 surviving posts + 2 merged-source overrides + 3 Blogspot fallbacks
+  // + 2 legacy document routes (terms.html, guidelines.html).
+  assert.equal(lines.length, postFiles.length + 7, 'one 301 per post, merged-source overrides, three fallbacks and two legacy documents')
   const redirectSet = new Set(lines)
   for (const name of postFiles) {
     const { frontmatter } = parseFrontmatter(readFileSync(join(postDir, name), 'utf8'))
