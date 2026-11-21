@@ -2,6 +2,7 @@
 
 | Version | Release Date | Highlights |
 |---------|--------------|------------|
+| 0.2.4 | 2026-11-21 | **ci:** remove unused Vite prototype so Netlify deploys Next.js (97aaa5d) |
 | 0.2.3 | 2026-11-21 | update dev-workflow repository name references (d7afc82) |
 | 0.2.2 | 2026-11-18 | **redirects:** scope blogspot root redirect to blog.programinglive.com (#9) (714f585) |
 | 0.2.1 | 2026-11-15 | **deps:** upgrade Next.js to 16.4.5 for the critical advisory (#4) (45c0e66) |
@@ -39,6 +40,45 @@
 
 
 
+
+
+## 0.2.4
+
+Released on **2026-11-21**.
+
+- **ci:** remove unused Vite prototype so Netlify deploys Next.js (97aaa5d)
+- **ci:** merge Vite prototype removal into main (4e75566)
+- update dev-workflow repository name references (d7afc82)
+- **site:** resolve audit findings for headers, legal links and social card (f80d756)
+- **site:** merge audit findings fix into main (783f106)
+- **redirects:** scope blogspot root redirect to blog.programinglive.com (#9) (714f585)
+- **deps:** upgrade Next.js to 16.4.5 for the critical advisory (#4) (45c0e66)
+- **notify:** announce deploy result through the relay on erp.beautyworld.id (35cca9b)
+- **notify:** stop waiting for a deploy that will never start (551325f)
+- **notify:** wait for the real deploy job and skip runs that deploy nothing (488495d)
+- **pilot:** laporan Discord tidak boleh menggagalkan pilot yang sehat (ab9c2af)
+- **test:** align smoke test assertions with page content and improve browser stability (825d3d1)
+- normalize _redirects line endings in blog-pages test for Windows working trees (4a8c3ee)
+- update app/id/open-source/page.tsx, app/open-source/page.tsx, data/site-content.ts +2 more (9a7e9f6)
+- update app/id/open-source/page.tsx, app/open-source/page.tsx, data/site-content.ts +2 more (6f526ca)
+- update app/id/open-source/page.tsx, app/open-source/page.tsx, data/site-content.ts +2 more (2f38afe)
+- update README.md, docs/PROJECT_DEPLOYMENTS.md, and tests/links.test.js (c9a23bf)
+- **deploy:** document GCS image archive for blog posts (7dfd25d)
+- **deploy:** drop Blogger retirement follow-up per owner decision (62b99e6)
+- **deploy:** mark legacy blogspot cutover as done (b5ac451)
+- record pending owner CNAME action for legacy blog.programinglive.com 301s (cc5ddb6)
+- update release notes for v0.1.14 (d5961c5)
+- **ci:** move verify job to the bw-tools self-hosted runner (04a551b)
+- **ci:** run the shared Node workflow on the self-hosted MMCH runner (#5) (9372f09)
+- **ci:** use the shared programinglive/ci-cd workflow (#3) (c89d1b8)
+- **deps:** override fast-uri to patched 3.1.9 (48f7061)
+- **hooks:** track pre-commit test verification script (dc38535)
+- **release:** 0.2.0 🚀 (cbc2d41)
+- **release:** adopt commiter release v2 (3a48ce7)
+- **release:** bump commiter to 1.5.1 (f1951e0)
+- **blog:** migrate Blogspot archive into /id/blog Pustaka library (2a7e2c9)
+- **legal:** add Indonesian privacy policy page for WhatsApp Business (e73382a)
+- **notify:** send bulletin and deploy results through the notification relay (fe78453)
 
 ## 0.2.3
 

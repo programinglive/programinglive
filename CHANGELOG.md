@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/programinglive/programinglive/compare/v0.2.3...v0.2.4) (2026-11-21)
+
+
+### 🐛 Bug Fixes
+
+* **ci:** remove unused Vite prototype so Netlify deploys Next.js ([97aaa5d](https://github.com/programinglive/programinglive/commit/97aaa5dfd868bec770cb20e1c548da75b31bf4b8))
+
+
+### 🧹 Chores
+
+* **ci:** merge Vite prototype removal into main ([4e75566](https://github.com/programinglive/programinglive/commit/4e75566777ca29b2352c93196b01f9863c9472db))
+
 ### [0.2.3](https://github.com/programinglive/programinglive/compare/v0.2.2...v0.2.3) (2026-11-21)
 
 
