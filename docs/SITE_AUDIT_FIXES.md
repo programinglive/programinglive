@@ -43,3 +43,12 @@ devwf audit --url https://programinglive.com --json
 The last command needs the `site_audit` capability from the dev-workflow
 repository. It is read-only: bounded GET requests, no browser and no form
 submission.
+
+## Deploy note
+
+The first tagged release (`v0.2.3`) built and tested successfully but the
+Netlify deploy failed: `netlify deploy --build` detected two frameworks because
+the repository still contained the unused Vite prototype (`index.html`,
+`src/`, and the `vite` devDependency) alongside the Next.js App Router app. The
+prototype was removed and `tailwind.config.js` content globs were narrowed to
+`app/` and `components/`, so auto-detection now sees only Next.js.
