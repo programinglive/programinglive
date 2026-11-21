@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/programinglive/programinglive/compare/v0.2.2...v0.2.3) (2026-11-21)
+
+
+### 📝 Documentation
+
+* update dev-workflow repository name references ([d7afc82](https://github.com/programinglive/programinglive/commit/d7afc82c9367f51c3aaf7f19d243bda00237682f))
+
+
+### 🐛 Bug Fixes
+
+* **site:** resolve audit findings for headers, legal links and social card ([f80d756](https://github.com/programinglive/programinglive/commit/f80d756b5649f30d8a08d062e23f41937cc60196))
+
+
+### 🧹 Chores
+
+* **site:** merge audit findings fix into main ([783f106](https://github.com/programinglive/programinglive/commit/783f10610b8f743225af88fe903db31391b87d2e))
+
 ### [0.2.2](https://github.com/programinglive/programinglive/compare/v0.2.1...v0.2.2) (2026-11-18)
 
 
